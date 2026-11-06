@@ -1,0 +1,28 @@
+# Dependencies
+node_modules
+
+# Nuxt build output and caches
+.nuxt
+.output
+.data
+.nitro
+.cache
+dist
+
+# Environment files (may hold your Google Apps Script URL)
+.env
+.env.*
+!.env.example
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode
+.idea
+
+# Local Claude Code tooling
+.claude
