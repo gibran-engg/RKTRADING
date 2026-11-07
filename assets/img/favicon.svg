@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <rect width="64" height="64" fill="#142d27"/>
+  <rect x="5.5" y="5.5" width="53" height="53" fill="none" stroke="#56706a"/>
+  <text x="31" y="42" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="27" font-weight="800" letter-spacing="-2" fill="#d6c69a">RK</text>
+</svg>
