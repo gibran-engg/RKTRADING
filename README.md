@@ -1,89 +1,130 @@
-# RK Trading website
+# R.K. Trading website
 
-Single-page website for RK Trading, a Mumbai-based import, export and distribution business (FMCG & beverages, botanical raw materials, fresh produce).
+Website for R.K. Trading, a Mumbai-based general trader (imports and exports, since 2017). Five static pages in English, Chinese (中文) and Arabic (العربية).
 
-It is a **plain static site**: HTML, CSS and vanilla JavaScript. There is no framework, no npm install and no build step. The files in this folder are exactly what gets deployed.
+It is a **plain static site**: HTML, CSS and vanilla JavaScript. No framework, no npm install, no build step. The files in this folder are exactly what gets deployed.
 
 ## Run it locally
 
 Pick any one of these.
 
-**Option A: VS Code Live Server (recommended while editing)**
+**VS Code Live Server (best while editing).** Install the *Live Server* extension, then right-click `index.html` → **Open with Live Server**. It reloads on save.
 
-1. Install the *Live Server* extension (by Ritwick Dey) in VS Code.
-2. Open this folder in VS Code.
-3. Right-click `index.html` → **Open with Live Server**. The page reloads automatically when you save a file.
-
-**Option B: Python's built-in server**
+**Python's built-in server.**
 
 ```bash
 python -m http.server 8000
 ```
 
-Then open <http://localhost:8000>. Stop it with `Ctrl+C`.
+Then open <http://localhost:8000>. If the port is busy, use another one (`8080`). Stop with `Ctrl+C`. It does not auto-reload; refresh the browser after saving.
 
-**Option C: open the file directly**
+**Open the file directly.** Double-click `index.html`. Everything works, including language switching and the forms.
 
-Double-click `index.html`. Everything works, including the catalogue and the enquiry form; scripts are deliberately loaded as plain scripts (not ES modules) so this works.
-
-Images (Unsplash) and fonts (Google Fonts) load from the internet, so you need a connection for the page to look right.
+Fonts (Google Fonts) load from the internet, so you need a connection for the page to look right. Chinese and Arabic use fonts already installed on the visitor's device, so they add no download.
 
 ## Project structure
 
 ```
-index.html              All page content and markup (one page, anchored sections)
+index.html        Home: hero, trust bar, products, where we trade, why us, process, registrations, FAQ, quick-quote form (bottom)
+imports.html      Imports: five categories
+exports.html      Exports: five categories
+about.html        Story, owner, registrations (numbers go here)
+contact.html      Full enquiry form, contact details
+404.html          "Page not found"
 assets/
-  css/main.css          All styles: design tokens at the top, then one section per page area
-  js/config.js          Site settings: Google Sheets URL for the enquiry form
-  js/main.js            Behaviour: mobile menu, active-nav highlight, catalogue, enquiry form
-  img/favicon.svg       Browser tab icon
-google-sheets-setup.md  How to connect the enquiry form to a Google Sheet
+  css/main.css    All styles. Design tokens (green / white / blue) at the top
+  js/config.js    Settings: Google Sheets URL + phone / WhatsApp / email / address
+  js/main.js      Menu, contact details, enquiry forms
+  js/i18n.js      Language switching
+  js/lang/zh.js   Chinese translations   (loaded only when a visitor picks 中文)
+  js/lang/ar.js   Arabic translations    (loaded only when a visitor picks العربية)
+  img/logo.png, logo-light.png   Company seal (header; white version for the dark footer)
+  img/favicon-32.png, favicon-64.png, apple-touch-icon.png   Browser and phone icons (globe mark / full seal)
+  img/world-map.svg   Land for the home-page trade map
+docs/content-plan.md   Positioning, sitemap, research notes, decisions and open client questions
+google-sheets-setup.md How to receive enquiries in a Google Sheet
 ```
 
-Content lives in `index.html` (not in JavaScript), so the page is fully readable without JavaScript and by search engines later on.
+## Everyday edits
 
-## What the page does
+### Contact details and Google Sheets: `assets/js/config.js`
 
-| Feature | Where |
-| --- | --- |
-| Sticky header, mobile menu (closes on link, Escape or outside click), active-section highlight | `main.js` → `initNavigation`, `initActiveSection` |
-| Product catalogue: category filters, multi-word search (also searches the product details), empty state with reset | `main.js` → `initCatalogue` |
-| Intro-strip verticals jump to the catalogue pre-filtered | `data-filter-link` in `index.html` |
-| Expandable "Product details" per card | native `<details>` in `index.html` |
-| "Enquire about this category" pre-selects *Product interest* and mentions the product in the message | `main.js` → `initEnquiryForm` |
-| Enquiry form: inline validation, honeypot, sending state, timeout, error and success screens | `main.js` → `initEnquiryForm` |
-| Demo mode vs. Google Sheets | `config.js` → `enquiryEndpoint` |
+When the client sends their phone, WhatsApp, email and address, put them in `config.js`. They appear on every page: top bar, footer, closing banners, the quote section on the home page, the Contact page, and the floating WhatsApp / Call buttons (a tap-to-call bar on phones). The `tel:`, `mailto:`, WhatsApp and Google Maps links are built for you. Anything left empty stays hidden in the top bar and footer and shows a "to follow" placeholder on the Contact page. The WhatsApp button only appears once a number is set.
 
-## Common edits
+The same details are also written directly into each page's HTML, so they show without JavaScript, survive caching and are visible to search engines. `config.js` takes over once it loads. **If the phone, email or address changes, update `config.js` and also search the project for the old value and replace it** (about 5 files).
 
-**Business details and licence numbers.** Search `index.html` for `PLACEHOLDERS`. The contact address, email and phone are in the Contact section; IEC, GSTIN, FSSAI, APEDA and Spices Board numbers are in the Documentation section. Delete a licence row you don't hold, or the whole `.credentials` block.
+If a change doesn't show up in your browser, do a hard refresh (`Ctrl+F5`): the CSS and script links carry a version suffix (`?v=3`); bump it when you edit those files.
 
-**Add or edit a product.** In `index.html`, copy an existing `<article class="product-card">` block inside the portfolio section. Keep these in sync:
+The Google Sheets URL goes in the same file. See [google-sheets-setup.md](google-sheets-setup.md).
 
-- `data-category` on the card must match one of the filter buttons (`data-filter`).
-- `data-interest` on the card's "Enquire" link must match an option in the form's *Product interest* dropdown.
-- `data-product` on that link is the name that gets written into the enquiry message.
+### Registration numbers and owner bio: `about.html`
 
-**Add a category.** Add a filter button (`data-filter="…"`), use the same text in the cards' `data-category`, and add it as an option in the *Product interest* dropdown.
+Each registration row says "Available on request" for now. Replace that text with the real number (and remove its `data-i18n` attribute) and delete a row the client does not hold. The owner bio is a one-line factual sentence; extend it (and its `about.owner.bio` key in `zh.js` / `ar.js`) and swap the owner icon for a photo when one arrives.
 
-**Colours, fonts, spacing.** Change the tokens at the top of `assets/css/main.css` (`:root { … }`).
+### Text and translations
 
-## Enquiry form
+English lives in the HTML and is the source of truth. Chinese and Arabic are looked up by key:
 
-With `enquiryEndpoint: ''` in `assets/js/config.js` (the default) the form is in **demo mode**: it validates, shows "Sending…" briefly and then the success screen, and logs the payload it would have sent to the browser console. A note under the button says it is in demo mode.
+```html
+<h3 data-i18n="why.2.t">Graded, sized and packed by us</h3>
+```
 
-To receive real enquiries in a Google Sheet, follow [google-sheets-setup.md](google-sheets-setup.md). It takes about five minutes and only involves pasting one URL into `config.js`.
+```js
+// assets/js/lang/zh.js and ar.js
+'why.2.t': '由我们分级、分选和包装',
+```
+
+To change a sentence: edit the English in the HTML, then update the same key in `zh.js` and `ar.js`. If you skip a translation, that text simply shows in English. Headings that contain an emphasised phrase use `data-i18n-html` and `<em>…</em>`. Placeholders and labels use `data-i18n-attr="placeholder:key"`.
+
+The translations are a **first draft**. Have a native speaker review them (especially trade terms) before launch.
+
+### Photos
+
+The ten product photos are free stock photos from [Unsplash](https://unsplash.com/license) loaded straight from their servers (no attribution required). They are **stand-ins** for the client's own photos, and each was checked for visible brand logos. To swap one, change the `src` of its `<img class="media">` in `index.html`, `imports.html` or `exports.html` to a file in `assets/img/`, for example:
+
+```html
+<img class="media" src="assets/img/dates.jpg" alt="Dry dates packed in cartons" width="900" height="720" loading="lazy">
+```
+
+Export photos at about 1200px wide as WebP or compressed JPEG (under 200 KB each). **Do not use photos that show visible brand logos** until the client confirms that is allowed. Before launch, host the photos yourself rather than relying on Unsplash.
+
+The five process cards (Procurement, Labelling, Loading, Shipping, Unloading) use free Unsplash stand-in photos, checked for visible brand logos. Labelling and Loading are cropped copies kept in `assets/img/` (`process-labelling.jpg`, `process-loading.jpg`) so that the logos in the original frames are cut out. The client wants **photos only, no video**. To swap one, change the `src` of its `<img class="media">` in `index.html` to a file in `assets/img/`.
+
+The trade map on the home page draws land from `assets/img/world-map.svg` (Natural Earth, public domain) with the routes and labels on top. The overlay uses the same 900x470 box as the map: `x = (lon + 25) * 5.294`, `y = (62.7 - lat) * 5.294`. To add a country, work out its x, y that way and add a node, an arc and a label in `index.html`.
+
+Each product photo carries a small arrow badge: **inward arrow = import, outward arrow = export**. It is part of the `<div class="photo">` wrapper around the image; keep the wrapper when swapping photos.
+
+### Adding or changing a product
+
+Each category exists in these places. Keep them in step:
+
+1. `imports.html` or `exports.html`: copy a `<article class="cat" id="…">` block.
+2. `index.html`: the matching `<article class="card-cat">` and the entry in the hero quick-quote *Product interest* list.
+3. `contact.html`: the *Product interest* option. Give it `data-slug="…"` equal to the block's `id`; links like `contact.html?interest=dates` use it to pre-select the product.
+4. Footer links on all pages, and the jump bar at the top of the imports/exports page.
+5. Translation keys `cat.<id>.*` in `zh.js` and `ar.js`.
+
+### Navigation and footer
+
+The header and footer are repeated in each page so they work without JavaScript. To change a menu item, edit it in all five pages (search for `data-header`).
+
+## The enquiry forms
+
+There are two forms: a short quick-quote at the bottom of the home page and the full form on the Contact page. Both validate inline, block double-sends, drop bot submissions (hidden honeypot field), time out after 20 seconds, and keep the visitor's typing if sending fails.
+
+With `enquiryEndpoint: ''` (the default) they run in **demo mode**: on a local address (localhost, 127.0.0.1, a file opened from disk) they show a "Demo mode" note, simulate sending, and log the payload to the browser console. On any other address with no endpoint set, the form does **not** fake a success: it shows "Online enquiries are temporarily unavailable" with the phone and email from `config.js`, so no enquiry is silently lost. Set the Apps Script URL in `config.js` to go live. Each enquiry also records the visitor's **language** (`en`, `zh` or `ar`), so the client's n8n workflow can reply in the right language.
 
 ## Browser support
 
-Current Chrome, Edge, Firefox and Safari (desktop and mobile). The layout is responsive from 320px up, with breakpoints at roughly 1000px (two-column catalogue), 860px (mobile menu), 760px (stacked sections) and 600px (single column).
+Current Chrome, Edge, Firefox and Safari on desktop and mobile. Responsive from 320px up. Arabic uses a full right-to-left layout.
 
 ## Later: production launch
 
-Deliberately **not** done yet, because they depend on the final domain. The structure already leaves room for each, so none of them needs a restructure:
+Deliberately **not done yet**; each needs the final domain. Nothing below needs a restructure:
 
-- Canonical URL, production `<meta>` / Open Graph / Twitter tags and structured data: add them to the `<head>` of `index.html`, where a comment marks the spot.
-- `robots.txt` and `sitemap.xml`: add as new files in the project root.
-- Google Search Console and Google Analytics: add the verification tag and script to `<head>`.
-- Cloudflare Pages: connect this GitHub repository with no framework preset, leave the build command empty, and point the build output directory at the repository root. DNS and SSL are configured in Cloudflare once the domain is bought.
-- Optionally self-host the images in `assets/img/` instead of loading them from Unsplash.
+- Canonical URLs, Open Graph / Twitter tags, structured data (Organization / LocalBusiness), `robots.txt`, `sitemap.xml`, Search Console, analytics: a comment in each page's `<head>` marks the spot.
+- **Search engines and languages.** Today there is one URL per page and Chinese / Arabic are applied by JavaScript, so search engines index the English text. When the SEO phase starts, generate real `/zh/` and `/ar/` pages (with `hreflang`) from the same HTML and dictionaries. No content needs rewriting.
+- Cloudflare Pages: connect this repository with no framework preset, an empty build command and the repository root as the output directory. DNS and SSL are configured once the domain is bought. `404.html` is picked up automatically.
+- Replace the Unsplash stand-in photos and the process placeholders with the client's photos, hosted in `assets/img/`.
+- Business email on the new domain, then add it to `config.js`.
+- A privacy policy page, because the forms collect personal data.

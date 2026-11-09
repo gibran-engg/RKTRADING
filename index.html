@@ -1,604 +1,531 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>RK Trading | International Sourcing &amp; Distribution</title>
-  <meta name="description" content="Mumbai-based trading partner for international FMCG, botanical raw materials and fresh produce, with sourcing, shipments, packaging, labelling, quality checks, documentation and logistics.">
-  <meta name="theme-color" content="#142d27">
-
+  <title data-i18n="meta.home.title">R.K. Trading | Import &amp; Export Company in Mumbai, India</title>
+  <meta name="description" content="Mumbai import-export trader since 2017. Imports: heating equipment, PPR, flooring, herbals, dates. Exports: spices, tea, grains, produce, FMCG. Request a quote." data-i18n-attr="content:meta.home.desc">
+  <meta name="theme-color" content="#0c4a37">
   <!--
-    PRODUCTION SEO (deferred until the domain is purchased).
-    Canonical URL, Open Graph / Twitter tags, structured data and analytics
-    go here in the launch phase. See "Later: production launch" in README.md.
+    PRODUCTION SEO (deferred until the domain is bought): canonical URL, hreflang, Open Graph /
+    Twitter tags, structured data (Organization, LocalBusiness), analytics and Search Console tags
+    go here. See "Later: production launch" in README.md.
   -->
-
-  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <script>
+/* Applies the saved language before first paint (direction + font). Keep in sync across pages. */
+document.documentElement.classList.add('js');
+try{var l=new URLSearchParams(location.search).get('lang')||localStorage.getItem('rk-lang');
+if(l==='zh'||l==='ar'){var h=document.documentElement;h.lang=l;h.dir=l==='ar'?'rtl':'ltr';h.classList.add('i18n-pending');
+setTimeout(function(){h.classList.remove('i18n-pending')},2500)}}catch(e){}
+</script>
+  <link rel="icon" href="assets/img/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/img/favicon-64.png" type="image/png" sizes="64x64">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@500;600;700;800&display=swap">
-  <link rel="stylesheet" href="assets/css/main.css">
-
-  <!-- Plain scripts (not ES modules) so the site also works when index.html is opened directly from disk. -->
-  <script src="assets/js/config.js" defer></script>
-  <script src="assets/js/main.js" defer></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Manrope:wght@600;700;800&display=swap">
+  <link rel="stylesheet" href="assets/css/main.css?v=12">
+  <!-- Plain scripts (not ES modules) so the site also works when opened straight from disk. -->
+  <script src="assets/js/config.js?v=4" defer></script>
+  <script src="assets/js/i18n.js?v=4" defer></script>
+  <script src="assets/js/main.js?v=4" defer></script>
 </head>
-<body id="top">
-  <a class="skip-link" href="#main">Skip to content</a>
+<body>
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="g-boiler" viewBox="0 0 64 64"><rect x="16" y="8" width="32" height="46" rx="5"/><path d="M24 8V4M40 8V4"/><circle cx="32" cy="21" r="5"/><path d="M32 33c-5 4-5 9 0 12 5-3 5-8 0-12z"/><path d="M22 54v5M42 54v5"/></symbol>
+    <symbol id="g-heatpump" viewBox="0 0 64 64"><rect x="8" y="14" width="48" height="36" rx="5"/><circle cx="32" cy="32" r="11"/><path d="M32 32v-8M32 32l7 4M32 32l-7 4"/><path d="M14 56h8M42 56h8"/></symbol>
+    <symbol id="g-pipe" viewBox="0 0 64 64"><path d="M6 22h28a16 16 0 0 1 16 16v20" stroke-width="12" opacity=".28"/><path d="M6 22h28a16 16 0 0 1 16 16v20"/><rect x="4" y="14" width="6" height="16" rx="1.5"/><rect x="40" y="52" width="20" height="6" rx="1.5"/></symbol>
+    <symbol id="g-floor" viewBox="0 0 64 64"><rect x="8" y="14" width="48" height="38" rx="2"/><path d="M8 26.7h48M8 39.3h48M24 14v12.7M44 26.7v12.6M18 39.3V52M38 14v12.7"/></symbol>
+    <symbol id="g-herb" viewBox="0 0 64 64"><path d="M32 58V22"/><path d="M32 46c-10 0-14-6-14-14 9 0 14 5 14 14z"/><path d="M32 36c10 0 14-6 14-14-9 0-14 5-14 14z"/><path d="M32 22c-6-2-8-8-6-14 6 2 8 8 6 14z"/></symbol>
+    <symbol id="g-dates" viewBox="0 0 64 64"><ellipse cx="24" cy="40" rx="9" ry="15" transform="rotate(-18 24 40)"/><ellipse cx="42" cy="38" rx="8" ry="13" transform="rotate(16 42 38)"/><path d="M28 18c4-6 12-8 20-4M28 18c-2 4-1 8 2 10"/></symbol>
+    <symbol id="g-box" viewBox="0 0 64 64"><path d="M8 22 32 10l24 12-24 12z"/><path d="M8 22v24l24 12V34M56 22v24L32 58"/><path d="m20 16 24 12"/></symbol>
+    <symbol id="g-spice" viewBox="0 0 64 64"><path d="M8 34h48a24 18 0 0 1-48 0z"/><path d="M16 34c2-10 10-14 16-14s14 4 16 14"/><circle cx="26" cy="27" r="1.6"/><circle cx="34" cy="23" r="1.6"/><circle cx="41" cy="28" r="1.6"/></symbol>
+    <symbol id="g-tea" viewBox="0 0 64 64"><path d="M10 28h36v10a14 14 0 0 1-14 14h-8a14 14 0 0 1-14-14z"/><path d="M46 31h4a6 6 0 0 1 0 12h-5"/><path d="M20 22c-3-4 3-6 0-10M30 22c-3-4 3-6 0-10M40 22c-3-4 3-6 0-10"/><path d="M12 58h34"/></symbol>
+    <symbol id="g-produce" viewBox="0 0 64 64"><path d="M32 22c-5-5-18-3-18 13 0 12 8 23 15 23 2 0 2-1 3-1s1 1 3 1c7 0 15-11 15-23 0-16-13-18-18-13z"/><path d="M32 22c0-6 2-10 7-12"/></symbol>
+    <symbol id="g-grain" viewBox="0 0 64 64"><path d="M32 60V12"/><path d="M32 12c-4-3-4-7 0-10 4 3 4 7 0 10z"/><path d="M32 26c-8 0-10-6-10-10 8 0 10 5 10 10zM32 26c8 0 10-6 10-10-8 0-10 5-10 10z"/><path d="M32 40c-8 0-10-6-10-10 8 0 10 5 10 10zM32 40c8 0 10-6 10-10-8 0-10 5-10 10z"/><path d="M32 54c-8 0-10-6-10-10 8 0 10 5 10 10zM32 54c8 0 10-6 10-10-8 0-10 5-10 10z"/></symbol>
+    <symbol id="g-label" viewBox="0 0 64 64"><path d="M8 10h24l24 24-22 22L10 32z"/><circle cx="20" cy="22" r="3"/></symbol>
+    <symbol id="g-load" viewBox="0 0 64 64"><rect x="6" y="24" width="52" height="30" rx="2"/><path d="M16 24v30M26 24v30M36 24v30M46 24v30"/><path d="M32 4v13m-6-6 6 6 6-6"/></symbol>
+    <symbol id="g-ship" viewBox="0 0 64 64"><path d="M6 38h52l-8 14H14z"/><path d="M14 38V26h36v12"/><path d="M22 26v-8h20v8"/><path d="M4 58c6 0 6-3 12-3s6 3 12 3 6-3 12-3 6 3 12 3"/></symbol>
+    <symbol id="g-truck" viewBox="0 0 64 64"><path d="M4 16h34v30H4z"/><path d="M38 26h12l10 10v10H38z"/><circle cx="16" cy="48" r="5"/><circle cx="48" cy="48" r="5"/></symbol>
+    <symbol id="g-globe" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><ellipse cx="32" cy="32" rx="10" ry="24"/><path d="M8 32h48M12 20h40M12 44h40"/></symbol>
+    <symbol id="g-shield" viewBox="0 0 64 64"><path d="M32 6l20 8v16c0 14-9 24-20 28C21 54 12 44 12 30V14z"/><path d="m23 32 7 7 12-14"/></symbol>
+    <symbol id="g-doc" viewBox="0 0 64 64"><path d="M14 6h26l12 12v40H14z"/><path d="M40 6v12h12M22 30h22M22 40h22M22 50h14"/></symbol>
+    <symbol id="g-quote" viewBox="0 0 64 64"><path d="M8 10h48v32H30L18 54V42H8z"/><path d="M20 22h24M20 31h14"/></symbol>
+    <symbol id="g-phone" viewBox="0 0 64 64"><path d="M16 6h12l4 14-8 4a30 30 0 0 0 16 16l4-8 14 4v12c0 4-4 8-8 8C28 56 8 36 8 14c0-4 4-8 8-8z"/></symbol>
+    <symbol id="g-chat" viewBox="0 0 64 64"><path d="M8 10h48v34H28L14 56V44H8z"/><path d="M20 24h24M20 33h14"/></symbol>
+    <symbol id="g-mail" viewBox="0 0 64 64"><rect x="6" y="12" width="52" height="40" rx="4"/><path d="m8 16 24 20 24-20"/></symbol>
+    <symbol id="g-pin" viewBox="0 0 64 64"><path d="M32 58S14 40 14 26a18 18 0 0 1 36 0c0 14-18 32-18 32z"/><circle cx="32" cy="26" r="6"/></symbol>
+    <symbol id="g-user" viewBox="0 0 64 64"><circle cx="32" cy="22" r="11"/><path d="M10 58c0-12 10-20 22-20s22 8 22 20"/></symbol>
+    <symbol id="g-in" viewBox="0 0 64 64"><path d="M12 42v12h40V42"/><path d="M32 6v34M20 28l12 12 12-12"/></symbol>
+    <symbol id="g-out" viewBox="0 0 64 64"><path d="M12 42v12h40V42"/><path d="M32 40V6M20 18 32 6l12 12"/></symbol>
+    <symbol id="g-check" viewBox="0 0 64 64"><circle cx="32" cy="32" r="24"/><path d="m21 33 8 8 15-17"/></symbol>
+  </defs>
+</svg>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
-  <!-- ============================== UTILITY BAR ============================== -->
   <div class="utility-bar">
     <div class="container utility-inner">
-      <span>Mumbai, India <i class="dot" aria-hidden="true"></i> International sourcing &amp; trade</span>
-      <a class="utility-link" href="#contact">Business enquiries <span class="arrow" aria-hidden="true">↗</span></a>
+      <span><span data-i18n="util.since">Importers &amp; exporters since 2017</span><i class="dot" aria-hidden="true"></i><span data-i18n="util.loc">Mumbai, India</span></span>
+      <div class="utility-contact">
+        <a data-contact="phone" data-hide-empty href="tel:+917006401698"><svg class="glyph" aria-hidden="true"><use href="#g-phone"></use></svg><span data-contact-text>+91 70064 01698</span></a>
+        <a data-contact="email" data-hide-empty href="mailto:riyazwani2015@gmail.com"><svg class="glyph" aria-hidden="true"><use href="#g-mail"></use></svg><span data-contact-text>riyazwani2015@gmail.com</span></a>
+      </div>
     </div>
   </div>
-
-  <!-- ================================ HEADER ================================= -->
   <header class="site-header" data-header>
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="RK Trading, back to top">
-        <span class="brand-symbol" aria-hidden="true">RK</span>
-        <span class="brand-text"><strong>RK TRADING</strong><small>IMPORT · EXPORT · DISTRIBUTION</small></span>
+      <a class="brand" href="index.html" aria-label="R.K. Trading, home">
+        <img class="brand-symbol" src="assets/img/logo.png" alt="" width="72" height="72" decoding="async">
+        <span class="brand-text"><strong>R.K. TRADING</strong><small>IMPORT · EXPORT · TRADING</small></span>
       </a>
-
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-menu-toggle>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu" data-i18n-attr="aria-label:nav.menuOpen" data-menu-toggle>
         <span class="menu-toggle-bars" aria-hidden="true"></span>
       </button>
-
-      <nav class="site-nav" id="site-nav" aria-label="Main" data-nav>
-        <a href="#company">Company</a>
-        <a href="#portfolio">Our portfolio</a>
-        <a href="#services">Services</a>
-        <a href="#approach">How we work</a>
-        <a class="nav-cta" href="#contact">Contact our team <span class="arrow" aria-hidden="true">↗</span></a>
+      <nav class="site-nav" id="site-nav" aria-label="Main" data-i18n-attr="aria-label:nav.main" data-nav>
+        <div class="nav-links">
+          <a href="imports.html" data-i18n="nav.imports">Imports</a>
+          <a href="exports.html" data-i18n="nav.exports">Exports</a>
+          <a href="about.html" data-i18n="nav.about">About</a>
+          <a href="contact.html" data-i18n="nav.contact">Contact</a>
+        </div>
+        <div class="lang-switch" role="group" aria-label="Language" data-i18n-attr="aria-label:lang.label" data-lang-switch>
+          <button type="button" data-lang="en" lang="en" aria-pressed="true">EN</button>
+          <button type="button" data-lang="zh" lang="zh" aria-pressed="false">中文</button>
+          <button type="button" data-lang="ar" lang="ar" aria-pressed="false">العربية</button>
+        </div>
+        <a class="button button--small" href="contact.html#enquiry"><span data-i18n="nav.quote">Get a quote</span> <span class="arrow" aria-hidden="true">↗</span></a>
       </nav>
     </div>
   </header>
 
   <main id="main">
 
-    <!-- ================================= HERO ================================ -->
+    <!-- ================================ HERO ================================ -->
     <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-media" aria-hidden="true"></div>
-      <div class="container hero-inner">
-        <p class="eyebrow eyebrow--light">International trade &amp; sourcing</p>
-        <h1 id="hero-title">Connecting products.<br><em>Connecting markets.</em></h1>
-        <p class="hero-lead">From international FMCG brands and botanical raw materials to fresh produce, RK Trading connects sourcing opportunities with buyers across markets.</p>
-        <div class="hero-actions">
-          <a class="button" href="#portfolio">Explore our portfolio <span class="arrow" aria-hidden="true">↗</span></a>
-          <a class="secondary-link" href="#company">Discover RK Trading <span class="arrow" aria-hidden="true">→</span></a>
-        </div>
-        <p class="hero-location">Mumbai, Maharashtra, India</p>
-      </div>
-      <div class="container hero-index" aria-hidden="true"><span>01</span> Trade with clarity</div>
-    </section>
-
-    <!-- ============================= INTRO STRIP ============================= -->
-    <!-- Each vertical links to the portfolio with that category pre-filtered. -->
-    <section class="intro-strip" aria-label="Trading verticals">
-      <div class="container intro-grid">
-        <div class="intro-title"><small>Our portfolio</small><strong>Three key trading verticals</strong></div>
-        <a class="intro-item" href="#portfolio" data-filter-link="FMCG &amp; beverages"><b>01</b><span>FMCG &amp; <br>beverages</span></a>
-        <a class="intro-item" href="#portfolio" data-filter-link="Botanical raw materials"><b>02</b><span>Botanical <br>raw materials</span></a>
-        <a class="intro-item" href="#portfolio" data-filter-link="Fresh produce"><b>03</b><span>Fresh <br>produce</span></a>
-      </div>
-    </section>
-
-    <!-- =============================== COMPANY =============================== -->
-    <section id="company" class="section" aria-labelledby="company-title">
-      <div class="container split">
-        <figure class="company-visual">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&amp;fit=crop&amp;w=1100&amp;q=85" alt="Office towers in an international business district" width="1100" height="1100" loading="lazy" decoding="async">
-          <figcaption class="visual-caption"><small>Based in Mumbai</small><strong>Local understanding.<br>International outlook.</strong></figcaption>
-        </figure>
-        <div class="prose">
-          <p class="eyebrow">About RK Trading</p>
-          <h2 id="company-title" class="section-title">A diversified trading partner with a <em>global outlook.</em></h2>
-          <p class="lead">RK Trading works across consumer goods, botanical commodities and agricultural produce — bringing suppliers, distributors and buyers together.</p>
-          <p>Our approach is built around understanding the requirement first: product specifications, origin, quantity, documentation, destination and commercial terms. We aim to make cross-border sourcing straightforward through clear communication and dependable coordination.</p>
-          <div class="serve">
-            <small>Who we work with</small>
-            <ul class="chips chips--large">
-              <li>Importers</li>
-              <li>Distributors</li>
-              <li>Wholesalers</li>
-              <li>Retailers &amp; supermarkets</li>
-              <li>Food &amp; beverage businesses</li>
-              <li>Brand owners</li>
-            </ul>
+      <div class="hero-art" aria-hidden="true">
+      <svg viewBox="0 0 1200 520" preserveAspectRatio="xMaxYMid slice" style="direction:ltr">
+        <path class="arc-in" d="M1160 90C980 40 760 110 640 260"/>
+        <path class="arc-in" d="M1120 430C960 470 760 400 640 260"/>
+        <path class="arc-in" d="M860 40C780 90 700 170 640 260"/>
+        <path class="arc-out" d="M640 260C520 130 330 80 120 150"/>
+        <path class="arc-out" d="M640 260C500 300 330 380 180 340"/>
+        <path class="arc-out" d="M640 260C560 400 470 470 360 500"/>
+        <circle cx="640" cy="260" r="6"/><circle cx="1160" cy="90" r="3.5"/><circle cx="1120" cy="430" r="3.5"/>
+        <circle cx="860" cy="40" r="3.5"/><circle cx="120" cy="150" r="3.5"/><circle cx="180" cy="340" r="3.5"/><circle cx="360" cy="500" r="3.5"/>
+      </svg>
+    </div>
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow eyebrow--light" data-i18n="home.hero.eyebrow">Import &amp; Export Trading, Mumbai</p>
+          <h1 id="hero-title" class="display" data-i18n-html="home.hero.title">Import &amp; Export Trading from <em>Mumbai to the World.</em></h1>
+          <p class="hero-lead" data-i18n="home.hero.lead">R.K. Trading is a Mumbai-based general trader, in business since 2017. We import heating equipment, building materials, herbals and dates, and export spices, tea, grains, fresh produce and FMCG. Every consignment is graded, sized and packed by us.</p>
+          <div class="hero-actions">
+            <a class="button button--light" href="#quote"><span data-i18n="cta.quote">Request a quote</span> <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="button button--outline" href="#products" data-i18n="home.hero.browse">Browse products</a>
           </div>
-          <a class="link-underline" href="#contact">Discuss a sourcing requirement <span class="arrow" aria-hidden="true">↗</span></a>
+          <ul class="hero-points">
+            <li data-i18n="home.hero.p1">Pricing on quotation</li>
+            <li data-i18n="home.hero.p2">Graded, sized and packed by us</li>
+            <li data-i18n="home.hero.p3">Origin and shelf life confirmed per product</li>
+          </ul>
         </div>
       </div>
     </section>
 
-    <!-- ============================== PORTFOLIO ============================== -->
-    <!--
-      To add a product: copy one <article class="product-card"> block.
-      data-category must exactly match one of the filter buttons below.
-      data-interest on the "Enquire" link must match an option in the enquiry form's "Product interest" list.
-    -->
-    <section id="portfolio" class="section portfolio-section" aria-labelledby="portfolio-title">
+    <!-- ============================== TRUST BAR ============================= -->
+    <section class="trust-bar" aria-label="At a glance">
+      <div class="container trust-grid">
+        <div class="trust-item"><strong data-i18n="trust.1.v">Since 2017</strong><span data-i18n="trust.1.l">Trading from Mumbai, India</span></div>
+        <div class="trust-item"><strong data-i18n="trust.2.v">6 countries</strong><span data-i18n="trust.2.l">we import from</span></div>
+        <div class="trust-item"><strong data-i18n="trust.3.v">10 product lines</strong><span data-i18n="trust.3.l">5 imported, 5 exported</span></div>
+        <div class="trust-item"><strong data-i18n="trust.4.v">6 registrations</strong><span data-i18n="trust.4.l">GST, FSSAI, APEDA, Spices Board, Tea, Udyam</span></div>
+      </div>
+    </section>
+
+    <!-- ============================== PRODUCTS ============================== -->
+    <section id="products" class="section" aria-labelledby="products-title">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">What we trade</p>
-            <h2 id="portfolio-title" class="section-title">Different origins.<br><em>One trading partner.</em></h2>
+            <p class="eyebrow" data-i18n="home.products.eyebrow">Products</p>
+            <h2 id="products-title" class="section-title" data-i18n-html="home.products.title">What we <em>import and export</em></h2>
           </div>
-          <p>Explore our core categories, from branded consumer products to raw botanicals and fresh agricultural commodities.</p>
+          <p data-i18n="home.products.lead">Two-way trade across ten product lines. Pricing is on quotation; specifications, origin and shelf life are confirmed for each product.</p>
         </div>
 
-        <div class="catalog-toolbar">
-          <div class="filters" role="group" aria-label="Filter products by category" data-filters>
-            <button class="filter is-active" type="button" data-filter="All" aria-pressed="true">All</button>
-            <button class="filter" type="button" data-filter="FMCG &amp; beverages" aria-pressed="false">FMCG &amp; beverages</button>
-            <button class="filter" type="button" data-filter="Botanical raw materials" aria-pressed="false">Botanical raw materials</button>
-            <button class="filter" type="button" data-filter="Fresh produce" aria-pressed="false">Fresh produce</button>
-          </div>
-          <label class="search">
-            <span class="visually-hidden">Search products</span>
-            <svg viewBox="0 0 20 20" aria-hidden="true"><circle cx="8.5" cy="8.5" r="5.75" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="m13 13 4.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            <input type="search" placeholder="Search products…" autocomplete="off" spellcheck="false" data-search>
-          </label>
+        <div class="subhead"><h3><span class="dir-icon dir-icon--in"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span><span data-i18n="home.imports.h">Our imports</span></h3><a class="link-arrow" href="imports.html"><span data-i18n="home.imports.all">All imports</span> <span class="arrow" aria-hidden="true">→</span></a></div>
+        <div class="card-grid">
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1650551182956-47efa0f90b64?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Boilers, Heat Pumps &amp; Heating Equipment" data-i18n-attr="alt:cat.heating.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--in" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.heating.name">Boilers, Heat Pumps &amp; Heating Equipment</h3>
+              <p data-i18n="cat.heating.short">Boilers, heat pumps and heating equipment for homes, commercial buildings and industry.</p>
+              <a class="link-arrow" href="imports.html#heating"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1538474705339-e87de81450e8?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="PPR Pipes &amp; Fittings" data-i18n-attr="alt:cat.ppr.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--in" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.ppr.name">PPR Pipes &amp; Fittings</h3>
+              <p data-i18n="cat.ppr.short">PPR pipes and fittings for hot and cold water plumbing.</p>
+              <a class="link-arrow" href="imports.html#ppr"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1573869908170-64b53a60d8da?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Building &amp; Flooring Materials" data-i18n-attr="alt:cat.building.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--in" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.building.name">Building &amp; Flooring Materials</h3>
+              <p data-i18n="cat.building.short">WPC and WPA flooring and other building and construction materials.</p>
+              <a class="link-arrow" href="imports.html#building"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1606951443958-5563274417a7?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Herbals &amp; Ayurvedic Products" data-i18n-attr="alt:cat.herbal.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--in" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.herbal.name">Herbals &amp; Ayurvedic Products</h3>
+              <p data-i18n="cat.herbal.short">Herbal and ayurvedic raw materials and products.</p>
+              <a class="link-arrow" href="imports.html#herbal"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1784043437426-3261c7f2c3de?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Dates: Dry &amp; Fresh" data-i18n-attr="alt:cat.dates.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--in" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-in"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.dates.name">Dates: Dry &amp; Fresh</h3>
+              <p data-i18n="cat.dates.short">Dry and fresh dates, graded and packed to order.</p>
+              <a class="link-arrow" href="imports.html#dates"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
+            </div>
+          </article>
         </div>
 
-        <p class="visually-hidden" role="status" aria-live="polite" data-catalog-status></p>
-
-        <div class="product-grid" data-product-grid>
-
-          <article class="product-card" data-category="FMCG &amp; beverages">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Assorted canned and bottled beverages" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">FMCG &amp; beverages</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">Multi-country sourcing</p>
-              <h3>Beverages &amp; Energy Drinks</h3>
-              <p class="product-desc">Branded soft drinks, energy drinks, juices and packaged beverages for retail, wholesale and distribution buyers.</p>
-              <ul class="chips">
-                <li>Soft drinks</li><li>Energy drinks</li><li>Juices</li><li>Branded waters</li><li>Tea &amp; coffee</li>
-              </ul>
-              <p class="examples">Examples: Red Bull, Pepsi, Tropicana and comparable branded drinks.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Product range</dt><dd>Carbonated soft drinks, energy drinks, fruit juices and nectars, bottled water, ready-to-drink tea and coffee</dd></div>
-                  <div><dt>Pack formats</dt><dd>Cans (250–500 ml), PET bottles (330 ml–2 L), cartons / tetra packs (200 ml–1 L), multipacks and trays</dd></div>
-                  <div><dt>Case packing</dt><dd>Shrink-wrapped trays or corrugated cartons, palletised for container loading</dd></div>
-                  <div><dt>Shelf life</dt><dd>Varies by product and format; remaining shelf life at arrival is agreed before shipment</dd></div>
-                  <div><dt>Storage &amp; transit</dt><dd>Cool, dry storage away from direct sunlight; dry containers, with temperature care in hot seasons</dd></div>
-                  <div><dt>Labelling</dt><dd>Ingredients, nutrition panel, batch and best-before date, importer details, in the destination-market language where required</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, food-safety and labelling compliance</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="FMCG &amp; beverages" data-product="Beverages &amp; Energy Drinks">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
+        <div class="subhead"><h3><span class="dir-icon dir-icon--out"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span><span data-i18n="home.exports.h">Our exports</span></h3><a class="link-arrow" href="exports.html"><span data-i18n="home.exports.all">All exports</span> <span class="arrow" aria-hidden="true">→</span></a></div>
+        <div class="card-grid">
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="FMCG Products" data-i18n-attr="alt:cat.fmcg.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--out" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.fmcg.name">FMCG Products</h3>
+              <p data-i18n="cat.fmcg.short">Fast-moving consumer goods for retail, wholesale and distribution buyers.</p>
+              <a class="link-arrow" href="exports.html#fmcg"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
-
-          <article class="product-card" data-category="FMCG &amp; beverages">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Packaged snacks and crisps" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">FMCG &amp; beverages</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">India and international brands</p>
-              <h3>Snacks, Biscuits &amp; Confectionery</h3>
-              <p class="product-desc">Packaged snacks, biscuits, chocolates and sweets for supermarkets, wholesalers and distribution networks.</p>
-              <ul class="chips">
-                <li>Biscuits &amp; cookies</li><li>Chocolates</li><li>Candies &amp; gums</li><li>Chips &amp; namkeen</li><li>Instant noodles</li>
-              </ul>
-              <p class="examples">Examples: Parle-G, Cadbury, Oreo, Lay’s and similar ranges.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Product range</dt><dd>Biscuits and cookies, chocolates, candies and gums, chips and namkeen, instant noodles</dd></div>
-                  <div><dt>Pack formats</dt><dd>Single-serve to family packs and multipacks, sold by the carton or master case</dd></div>
-                  <div><dt>Case packing</dt><dd>Master cartons with fixed units per case; pallet configuration agreed per consignment</dd></div>
-                  <div><dt>Shelf life</dt><dd>Varies by category (biscuits and chips are shorter than many confectionery lines); minimum remaining shelf life is agreed with the buyer</dd></div>
-                  <div><dt>Storage &amp; transit</dt><dd>Cool, dry storage; chocolate and heat-sensitive lines may need temperature-controlled transport in warm months</dd></div>
-                  <div><dt>Labelling</dt><dd>Ingredients, allergen declaration, vegetarian / non-vegetarian mark where applicable, batch, best-before date and importer details</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, FSSAI / food-safety and labelling compliance</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="FMCG &amp; beverages" data-product="Snacks, Biscuits &amp; Confectionery">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1581600140682-d4e68c8cde32?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Spices" data-i18n-attr="alt:cat.spices.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--out" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.spices.name">Spices</h3>
+              <p data-i18n="cat.spices.short">Whole and ground spices, graded and packed to your specification.</p>
+              <a class="link-arrow" href="exports.html#spices"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
-
-          <article class="product-card" data-category="FMCG &amp; beverages">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Uncooked rice grains" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">FMCG &amp; beverages</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">India and other source markets</p>
-              <h3>Rice, Grains &amp; Staples</h3>
-              <p class="product-desc">Everyday grocery staples sourced to grade, packaging size and destination-market labelling requirements.</p>
-              <ul class="chips">
-                <li>Basmati &amp; non-basmati rice</li><li>Atta &amp; flours</li><li>Dals &amp; pulses</li><li>Cooking oil</li><li>Spices &amp; masalas</li>
-              </ul>
-              <p class="examples">Examples: Basmati rice, wheat atta, toor and moong dal, whole and ground spices.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Rice</dt><dd>Basmati (long grain, steam or sella) and non-basmati varieties; specified by grain length, broken percentage, moisture and purity</dd></div>
-                  <div><dt>Atta &amp; flours</dt><dd>Wheat atta, maida, suji and other flours, milled to the buyer’s specification</dd></div>
-                  <div><dt>Dals &amp; pulses</dt><dd>Toor, moong, chana, masoor, urad and others, whole or split, polished or unpolished</dd></div>
-                  <div><dt>Oils &amp; spices</dt><dd>Edible oils in retail packs or bulk; whole and ground spices and masalas, including turmeric, cumin, coriander and chilli</dd></div>
-                  <div><dt>Packing</dt><dd>1 kg to 50 kg bags (PP, non-woven or paper), retail packs in master cartons, private-label packing on request</dd></div>
-                  <div><dt>Shelf life &amp; storage</dt><dd>Dry, clean, ventilated storage; fumigation where the destination market requires it</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, phytosanitary and fumigation certificates where applicable; spice shipments follow Spices Board requirements</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="FMCG &amp; beverages" data-product="Rice, Grains &amp; Staples">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1563822249366-3efb23b8e0c9?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Tea" data-i18n-attr="alt:cat.tea.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--out" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.tea.name">Tea</h3>
+              <p data-i18n="cat.tea.short">Tea packed in the grades and pack sizes your market needs.</p>
+              <a class="link-arrow" href="exports.html#tea"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
-
-          <article class="product-card" data-category="Botanical raw materials">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1515586000433-45406d8e6662?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Dried herbs and botanical roots" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">Botanical raw materials</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">Afghanistan and other source markets</p>
-              <h3>Botanical Roots &amp; Herbs</h3>
-              <p class="product-desc">Unprocessed botanical ingredients and dried plant materials supplied as raw commodities for further processing.</p>
-              <ul class="chips">
-                <li>Licorice (mulethi) root</li><li>Dried herbs</li><li>Selected botanicals</li>
-              </ul>
-              <p class="examples">Specifications: part used, grade, moisture, cut size and packing.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Main product</dt><dd>Licorice (mulethi) root, with other dried herbs and botanicals available on request</dd></div>
-                  <div><dt>Forms</dt><dd>Whole roots, cut pieces, slices and powder, depending on the intended processing</dd></div>
-                  <div><dt>Specification points</dt><dd>Part used, cut size, moisture, foreign matter and any content or test parameters set by the buyer</dd></div>
-                  <div><dt>Packing</dt><dd>Jute or PP bags, or pressed bales, with weights agreed per consignment</dd></div>
-                  <div><dt>Availability</dt><dd>Depends on harvest season and origin; confirmed at quotation</dd></div>
-                  <div><dt>Intended use</dt><dd>Supplied as a raw commodity for further processing; end-use rules vary by destination market</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, phytosanitary certificate, fumigation certificate and lab test reports where required</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="Botanical raw materials" data-product="Botanical Roots &amp; Herbs">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1610348725531-843dff563e2c?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Fresh Fruit &amp; Vegetables" data-i18n-attr="alt:cat.produce.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--out" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.produce.name">Fresh Fruit &amp; Vegetables</h3>
+              <p data-i18n="cat.produce.short">Seasonal fresh fruit and vegetables, sized, graded and packed for export.</p>
+              <a class="link-arrow" href="exports.html#produce"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
-
-          <article class="product-card" data-category="Fresh produce">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1560806887-1e4cd0b6cbd6?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Fresh red apples" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">Fresh produce</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">Selected international origins</p>
-              <h3>Fresh Apples &amp; Seasonal Fruit</h3>
-              <p class="product-desc">Fresh fruit sourcing based on season, grade, size, packaging and destination-market requirements.</p>
-              <ul class="chips">
-                <li>Apples</li><li>Grapes</li><li>Bananas</li><li>Seasonal fruit</li>
-              </ul>
-              <p class="examples">Specifications: variety, grade, size, packaging and harvest season.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Apple varieties</dt><dd>Commonly Royal Gala, Red Delicious, Fuji, Granny Smith and Golden Delicious, depending on origin and season</dd></div>
-                  <div><dt>Other fruit</dt><dd>Table grapes, bananas and other seasonal fruit on request</dd></div>
-                  <div><dt>Grading</dt><dd>Size (count or diameter), colour, firmness and quality grade agreed with the buyer before shipment</dd></div>
-                  <div><dt>Packing</dt><dd>Cartons or trays of roughly 10–18 kg, palletised; labelled by variety, size and origin</dd></div>
-                  <div><dt>Cold chain</dt><dd>Refrigerated containers with temperature set to the fruit; bananas shipped green for ripening at destination</dd></div>
-                  <div><dt>Season</dt><dd>Depends on origin and harvest; availability and pricing confirmed at quotation</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, phytosanitary certificate</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="Fresh produce" data-product="Fresh Apples &amp; Seasonal Fruit">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
+          <article class="card-cat">
+            <div class="photo"><img class="media" src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Grains" data-i18n-attr="alt:cat.grains.name" width="640" height="480" loading="lazy" decoding="async"><span class="dir-badge dir-badge--out" aria-hidden="true"><svg class="glyph" aria-hidden="true"><use href="#g-out"></use></svg></span></div>
+            <div class="card-cat-body">
+              <h3 data-i18n="cat.grains.name">Grains</h3>
+              <p data-i18n="cat.grains.short">Grains graded, sized and packed to your specification.</p>
+              <a class="link-arrow" href="exports.html#grains"><span data-i18n="common.details">View details</span> <span class="arrow" aria-hidden="true">→</span></a>
             </div>
           </article>
-
-          <article class="product-card" data-category="Fresh produce">
-            <div class="product-image">
-              <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&amp;fit=crop&amp;w=1000&amp;q=85" alt="Fresh vegetables on display" width="1000" height="625" loading="lazy" decoding="async">
-              <span class="product-tag">Fresh produce</span>
-            </div>
-            <div class="product-body">
-              <p class="origin">India and other source markets</p>
-              <h3>Vegetables &amp; Agri Commodities</h3>
-              <p class="product-desc">Fresh agricultural commodities for importers, wholesalers, distributors and food businesses.</p>
-              <ul class="chips">
-                <li>Red onions</li><li>Tomatoes</li><li>Selected vegetables</li>
-              </ul>
-              <p class="examples">Specifications: variety, grade, size, packaging and shelf-life requirements.</p>
-              <details class="product-details">
-                <summary>Product details</summary>
-                <dl>
-                  <div><dt>Products</dt><dd>Red onions, tomatoes and other selected vegetables and agricultural commodities</dd></div>
-                  <div><dt>Specification points</dt><dd>Variety, size range, colour, firmness and quality grade agreed with the buyer</dd></div>
-                  <div><dt>Packing</dt><dd>Onions in mesh bags (typically 25–50 kg); tomatoes in crates or cartons</dd></div>
-                  <div><dt>Transit</dt><dd>Ventilated containers for onions; refrigerated containers for tomatoes and other perishables</dd></div>
-                  <div><dt>Shelf life</dt><dd>Onions keep considerably longer than tomatoes, so transit time and shelf life at arrival are planned together</dd></div>
-                  <div><dt>Availability</dt><dd>Seasonal and origin-dependent; confirmed at quotation</dd></div>
-                  <div><dt>Key documents</dt><dd>Commercial invoice, packing list, certificate of origin, phytosanitary certificate</dd></div>
-                </dl>
-              </details>
-              <a class="product-enquire" href="#contact" data-interest="Fresh produce" data-product="Vegetables &amp; Agri Commodities">Enquire about this category <span class="arrow" aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-
-          <div class="empty-state" hidden data-catalog-empty>
-            <p>No matching products. Try a different search or category.</p>
-            <button class="link-underline" type="button" data-catalog-reset>Clear search and filters</button>
-          </div>
-        </div>
-
-        <p class="disclaimer">Brand names are examples of product categories only and do not imply authorised distribution, endorsement or current stock. All products, origins, supplier access, specifications and destination-market permissions are subject to confirmation. Product details are indicative; buyers remain responsible for confirming import regulations and compliance in their own market.</p>
-      </div>
-    </section>
-
-    <!-- ============================ SOURCING BAND ============================ -->
-    <section class="sourcing-band" aria-labelledby="sourcing-title">
-      <div class="container split">
-        <div>
-          <p class="eyebrow eyebrow--light">Sourcing across markets</p>
-          <h2 id="sourcing-title" class="display-light">From origin to opportunity.</h2>
-        </div>
-        <div class="sourcing-copy">
-          <p>We can explore FMCG sourcing from relevant international markets, botanical raw materials such as Afghan licorice root, and fresh produce such as apples from selected origins.</p>
-          <p>Each enquiry is assessed individually, including supplier availability, product quality, import/export documentation and applicable regulations.</p>
-          <a class="link-underline link-underline--light" href="#contact">Talk to our team <span class="arrow" aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
-    <!-- =============================== SERVICES ============================== -->
-    <section id="services" class="section" aria-labelledby="services-title">
+    <!-- ============================ WHERE WE TRADE ============================ -->
+    <section id="markets" class="section section--blue" aria-labelledby="markets-title">
+      <div class="container trade-grid">
+        <div class="trade-map">
+        <svg viewBox="0 0 900 470" role="img" aria-label="Trade routes between Mumbai and our import origins and export markets" data-i18n-attr="aria-label:trade.mapLabel" style="direction:ltr">
+          <!-- Land from Natural Earth (public domain), drawn by assets/img/world-map.svg. Overlay uses the same 900x470 box:
+               x = (lon + 25) * 5.294, y = (62.7 - lat) * 5.294 -->
+          <image href="assets/img/world-map.svg" x="0" y="0" width="900" height="470" aria-hidden="true"/>
+          <path class="arc arc-in" d="M776 172Q650 150 518 237"/>
+          <path class="arc arc-in" d="M286 121Q400 128 518 237"/>
+          <path class="arc arc-in" d="M499 155Q485 195 518 237"/>
+          <path class="arc arc-in" d="M425 204Q470 200 518 237"/>
+          <path class="arc arc-in" d="M442 213Q482 226 518 237"/>
+          <path class="arc arc-in" d="M199 115Q360 62 518 237"/>
+          <path class="arc arc-out" d="M518 237Q450 275 380 207"/>
+          <path class="arc arc-out" d="M518 237Q600 330 671 321"/>
+          <path class="arc arc-out" d="M518 237Q505 285 555 301"/>
+          <circle class="pulse" cx="518" cy="237" r="9"/>
+          <circle class="node node--home" cx="518" cy="237" r="9"/>
+          <circle class="node" cx="776" cy="172" r="5"/><circle class="node" cx="286" cy="121" r="5"/>
+          <circle class="node" cx="499" cy="155" r="5"/><circle class="node" cx="425" cy="204" r="5"/>
+          <circle class="node" cx="442" cy="213" r="5"/><circle class="node" cx="199" cy="115" r="5"/>
+          <circle class="node" cx="380" cy="207" r="5"/><circle class="node" cx="671" cy="321" r="5"/>
+          <circle class="node" cx="555" cy="301" r="5"/>
+          <text class="label-home" x="530" y="264">Mumbai</text>
+          <text x="786" y="166" data-i18n="geo.china">China</text>
+          <text x="286" y="147" text-anchor="middle" data-i18n="geo.turkey">Turkey</text>
+          <text x="509" y="150" data-i18n="geo.afghanistan">Afghanistan</text>
+          <text x="417" y="192" text-anchor="end" data-i18n="geo.dubai">Dubai</text>
+          <text x="448" y="238" text-anchor="middle" data-i18n="geo.oman">Oman</text>
+          <text x="199" y="100" text-anchor="middle" data-i18n="geo.italy">Italy</text>
+          <text x="371" y="228" text-anchor="end" data-i18n="geo.mideast">Middle East</text>
+          <text x="681" y="340" data-i18n="geo.malaysia">Malaysia</text>
+          <text x="548" y="322" text-anchor="end" data-i18n="geo.srilanka">Sri Lanka</text>
+        </svg>
+        <div class="trade-legend"><span><i></i><b style="font-weight:500" data-i18n="trade.legendIn">Imports into India</b></span><span><i class="out"></i><b style="font-weight:500" data-i18n="trade.legendOut">Exports from India</b></span></div>
+      </div>
+        <div class="trade-lists">
+          <p class="eyebrow" data-i18n="home.markets.eyebrow">Where we trade</p>
+          <h2 id="markets-title" class="section-title" data-i18n-html="home.markets.title">Sourced from six countries. <em>Shipped to buyers abroad.</em></h2>
+          <div>
+            <h3 data-i18n="home.markets.from">We import from</h3>
+            <ul class="chips chips--blue chips--large">
+              <li data-i18n="geo.china">China</li><li data-i18n="geo.turkey">Turkey</li><li data-i18n="geo.afghanistan">Afghanistan</li>
+              <li data-i18n="geo.dubaiUae">Dubai (UAE)</li><li data-i18n="geo.oman">Oman</li><li data-i18n="geo.italy">Italy</li>
+            </ul>
+          </div>
+          <div>
+            <h3 data-i18n="home.markets.to">We export to</h3>
+            <ul class="chips chips--soft chips--large">
+              <li data-i18n="geo.mideast">Middle East</li><li data-i18n="geo.malaysia">Malaysia</li><li data-i18n="geo.srilanka">Sri Lanka</li>
+            </ul>
+          </div>
+          <p class="fineprint" data-i18n="home.markets.note">Need a different origin or destination? Ask us and we will tell you what is possible.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================= WHY ================================= -->
+    <section id="why" class="section" aria-labelledby="why-title">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow" data-i18n="why.eyebrow">Why R.K. Trading</p>
+          <h2 id="why-title" class="section-title" data-i18n-html="why.title">One trader, <em>both directions.</em></h2>
+          <p data-i18n="why.lead">A small, direct team that handles the details buyers worry about: grading, packing, paperwork and clear communication.</p>
+        </div>
+        <div class="why-grid">
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-globe"></use></svg><h3 data-i18n="why.1.t">Imports and exports under one roof</h3><p data-i18n="why.1.p">One partner for both directions of trade, so you deal with a single accountable team.</p></div>
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-box"></use></svg><h3 data-i18n="why.2.t">Graded, sized and packed by us</h3><p data-i18n="why.2.p">We do the grading, sizing and packing ourselves, so what you approve is what ships.</p></div>
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-doc"></use></svg><h3 data-i18n="why.3.t">Origin and shelf life, confirmed</h3><p data-i18n="why.3.p">Origin, shelf life and specifications are confirmed for each product before you commit.</p></div>
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-shield"></use></svg><h3 data-i18n="why.4.t">Registered and documented</h3><p data-i18n="why.4.p">GST, FSSAI, APEDA, Spices Board, Tea and Udyam registrations are held.</p></div>
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-quote"></use></svg><h3 data-i18n="why.5.t">Straightforward quotations</h3><p data-i18n="why.5.p">Pricing is on quotation. MOQ, lead times and terms are shared on request, by phone.</p></div>
+          <div class="why-card"><svg class="glyph" aria-hidden="true"><use href="#g-phone"></use></svg><h3 data-i18n="why.6.t">Speak to us directly</h3><p data-i18n="why.6.p">Send an enquiry and talk to our team by phone or WhatsApp, not a call centre.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =============================== PROCESS ================================ -->
+    <section id="process" class="section section--tint" aria-labelledby="process-title">
       <div class="container">
         <div class="section-heading">
           <div>
-            <p class="eyebrow">What we do</p>
-            <h2 id="services-title" class="section-title">Beyond sourcing.<br><em>End-to-end support.</em></h2>
+            <p class="eyebrow" data-i18n="process.eyebrow">How we work</p>
+            <h2 id="process-title" class="section-title" data-i18n-html="process.title">From procurement to <em>delivery</em></h2>
           </div>
-          <p>From finding the right supplier to getting goods to your door, we coordinate the details that make cross-border trade work.</p>
+          <p data-i18n="process.lead">How a consignment moves through our hands.</p>
         </div>
-        <div class="service-grid">
-          <div class="service-card"><small>01 / Sourcing</small><h3>Sourcing &amp; procurement</h3><p>Supplier identification, specification and price comparison, and quotations from relevant origins.</p></div>
-          <div class="service-card"><small>02 / Shipments</small><h3>Import &amp; export shipments</h3><p>Consignments arranged end to end, from supplier pickup and loading through to dispatch.</p></div>
-          <div class="service-card"><small>03 / Labelling</small><h3>Labelling</h3><p>Product labelling and relabelling prepared to meet destination-market and buyer requirements.</p></div>
-          <div class="service-card"><small>04 / Packaging</small><h3>Packaging</h3><p>Packing formats, carton sizes and export-grade packaging chosen to suit the product and the journey.</p></div>
-          <div class="service-card"><small>05 / Quality</small><h3>Quality checks</h3><p>Pre-shipment checks and verification against the specifications agreed with you.</p></div>
-          <div class="service-card"><small>06 / Documentation</small><h3>Trade documentation</h3><p>Commercial and compliance paperwork prepared to match the product and the destination market.</p></div>
-          <div class="service-card"><small>07 / Logistics</small><h3>Logistics &amp; delivery</h3><p>Freight booking, transport and shipment tracking coordinated to your port or warehouse.</p></div>
-          <a class="service-card service-cta" href="#contact">
-            <small>Need something specific?</small>
-            <h3>Tell us your requirement.</h3>
-            <span class="service-cta-link">Send an enquiry <span class="arrow" aria-hidden="true">↗</span></span>
-          </a>
+        <!-- Free Unsplash stand-in photos (checked for visible brand logos). Replace each src with the client's own photo in assets/img/ (photos only, no video); see README. -->
+        <div class="process-grid">
+          <article class="process-card"><div class="photo"><img class="media" src="https://images.unsplash.com/photo-1771769606888-86e2f4c6c65e?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Procurement" data-i18n-attr="alt:process.1.t" width="640" height="480" loading="lazy" decoding="async"></div><h3 data-i18n="process.1.t">Procurement</h3><p data-i18n="process.1.p">Products sourced from our suppliers to the agreed specification.</p></article>
+          <article class="process-card"><div class="photo"><img class="media" src="assets/img/process-labelling.jpg" alt="Labelling" data-i18n-attr="alt:process.2.t" width="640" height="480" loading="lazy" decoding="async"></div><h3 data-i18n="process.2.t">Labelling</h3><p data-i18n="process.2.p">Every pack labelled to the buyer's requirements.</p></article>
+          <article class="process-card"><div class="photo"><img class="media" src="assets/img/process-loading.jpg?v=4" alt="Loading" data-i18n-attr="alt:process.3.t" width="640" height="480" loading="lazy" decoding="async"></div><h3 data-i18n="process.3.t">Loading</h3><p data-i18n="process.3.p">Careful loading into containers and trucks.</p></article>
+          <article class="process-card"><div class="photo"><img class="media" src="https://images.unsplash.com/photo-1724597500306-a4cbb7d1324e?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Shipping" data-i18n-attr="alt:process.4.t" width="640" height="480" loading="lazy" decoding="async"></div><h3 data-i18n="process.4.t">Shipping</h3><p data-i18n="process.4.p">Shipped to your destination.</p></article>
+          <article class="process-card"><div class="photo"><img class="media" src="https://images.unsplash.com/photo-1787547285496-003f2d4e3fe5?auto=format&amp;fit=crop&amp;w=640&amp;h=480&amp;q=70" alt="Unloading" data-i18n-attr="alt:process.5.t" width="640" height="480" loading="lazy" decoding="async"></div><h3 data-i18n="process.5.t">Unloading</h3><p data-i18n="process.5.p">Unloaded and handed over at delivery.</p></article>
         </div>
       </div>
     </section>
 
-    <!-- ============================== WHY US ================================ -->
-    <section id="why" class="section why-section" aria-labelledby="why-title">
-      <div class="container split split--top">
-        <div class="prose">
-          <p class="eyebrow">Why RK Trading</p>
-          <h2 id="why-title" class="section-title">Built on clarity, <em>not complexity.</em></h2>
-          <p class="lead">One team, three verticals and a requirement-first way of working.</p>
-          <p>Whether you need a single product or a mixed consignment across categories, we focus on the details that decide whether a trade runs smoothly: specifications, documentation and communication.</p>
-          <a class="link-underline" href="#contact">Start a conversation <span class="arrow" aria-hidden="true">↗</span></a>
-        </div>
-        <ol class="why-list">
-          <li><b aria-hidden="true">01</b><div><h3>Requirement-first approach</h3><p>We start with your product, specification, quantity, destination and commercial terms before proposing a route.</p></div></li>
-          <li><b aria-hidden="true">02</b><div><h3>One partner, three verticals</h3><p>FMCG, botanical raw materials and fresh produce handled through a single point of contact.</p></div></li>
-          <li><b aria-hidden="true">03</b><div><h3>Multi-origin sourcing</h3><p>Supplier options across India, Afghanistan and other source markets, depending on the product.</p></div></li>
-          <li><b aria-hidden="true">04</b><div><h3>Specification &amp; quality focus</h3><p>Grade, packaging and quality expectations are agreed up front, not after shipment.</p></div></li>
-          <li><b aria-hidden="true">05</b><div><h3>Documentation awareness</h3><p>Paperwork and regulatory requirements are reviewed for each product and destination market.</p></div></li>
-          <li><b aria-hidden="true">06</b><div><h3>Tailored, transparent service</h3><p>Every enquiry is assessed individually, with clear communication at each stage.</p></div></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- =============================== APPROACH ============================== -->
-    <section id="approach" class="section" aria-labelledby="approach-title">
-      <div class="container">
-        <div class="center-heading">
-          <p class="eyebrow">Our approach</p>
-          <h2 id="approach-title" class="section-title">Clear communication.<br><em>Careful coordination.</em></h2>
-        </div>
-        <ol class="steps">
-          <li><small>01 / Understand</small><b aria-hidden="true">01</b><h3>Understand the requirement</h3><p>Product, quantity, specifications, destination and timeline.</p></li>
-          <li><small>02 / Source</small><b aria-hidden="true">02</b><h3>Identify sourcing options</h3><p>Explore suppliers, origin, availability and commercial terms.</p></li>
-          <li><small>03 / Align</small><b aria-hidden="true">03</b><h3>Coordinate trade details</h3><p>Align documentation, compliance and logistics requirements.</p></li>
-          <li><small>04 / Develop</small><b aria-hidden="true">04</b><h3>Build long-term business</h3><p>Keep communication transparent and relationships dependable.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <!-- ======================= DOCUMENTATION & COMPLIANCE ==================== -->
-    <section id="compliance" class="section docs-section" aria-labelledby="compliance-title">
-      <div class="container split split--top">
-        <div class="prose">
-          <p class="eyebrow">Documentation &amp; compliance</p>
-          <h2 id="compliance-title" class="section-title">Paperwork handled <em>properly.</em></h2>
-          <p class="lead">The right documents, matched to the product and the destination market.</p>
-          <p>Requirements differ between processed FMCG, botanical raw materials and fresh produce, and between import markets. We review what each shipment needs up front so documentation does not become a delay at the port.</p>
-        </div>
+    <!-- ============================= REGISTRATIONS ============================= -->
+    <section id="registrations" class="section" aria-labelledby="reg-title">
+      <div class="container reg-split">
         <div>
-          <ul class="doc-list">
-            <li>Commercial invoice</li>
-            <li>Packing list</li>
-            <li>Bill of lading / airway bill</li>
-            <li>Certificate of origin</li>
-            <li>Phytosanitary certificate (plants &amp; produce)</li>
-            <li>Fumigation certificate (where required)</li>
-            <li>Food-safety &amp; labelling compliance</li>
-            <li>Quality &amp; inspection reports</li>
-            <li>Letter of credit / banking documents</li>
-            <li>Customs clearance support</li>
-          </ul>
+          <p class="eyebrow" data-i18n="reg.eyebrow">Registrations</p>
+          <h2 id="reg-title" class="section-title" data-i18n-html="reg.title">Registered and <em>compliant</em></h2>
+          <p class="fineprint" style="margin-top:16px" data-i18n="reg.lead">R.K. Trading holds the registrations needed to trade food, spices, tea and agri products. Registration numbers are available on request.</p>
+          <a class="link-arrow" style="margin-top:18px" href="about.html#registrations"><span data-i18n="reg.link">See our registrations</span> <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+        <ul class="badge-row">
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.gst">GST</span></li>
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.fssai">FSSAI</span></li>
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.apeda">APEDA</span></li>
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.spices">Spices Board</span></li>
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.tea">Tea registration</span></li>
+          <li class="badge"><svg class="glyph" aria-hidden="true"><use href="#g-check"></use></svg><span data-i18n="reg.udyam">Udyam</span></li>
+        </ul>
+      </div>
+    </section>
 
-          <!--
-            PLACEHOLDERS: replace each value with your real registration number.
-            Delete a row you do not hold, or delete the whole .credentials block to hide it.
-          -->
-          <div class="credentials">
-            <small>Registrations &amp; licences</small>
-            <ul class="cred-list">
-              <li><span>Import Export Code (IEC)</span><b>[ IEC number ]</b></li>
-              <li><span>GST registration</span><b>[ GSTIN ]</b></li>
-              <li><span>FSSAI licence</span><b>[ FSSAI licence number ]</b></li>
-              <li><span>APEDA registration (RCMC)</span><b>[ APEDA registration number ]</b></li>
-              <li><span>Spices Board registration</span><b>[ Spices Board registration number ]</b></li>
-            </ul>
-          </div>
-          <p class="disclaimer">Documentation requirements vary by product, origin and destination market, and are confirmed for each shipment.</p>
+    <!-- ================================== FAQ ================================== -->
+    <section id="faq" class="section section--tint" aria-labelledby="faq-title">
+      <div class="container">
+        <div class="section-heading section-heading--center">
+          <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+          <h2 id="faq-title" class="section-title" data-i18n-html="faq.title">Questions <em>buyers ask us</em></h2>
+        </div>
+        <div class="faq">
+        <details class="faq-item">
+          <summary data-i18n="faq.q1">How do I get a price?</summary>
+          <div data-i18n="faq.a1">Pricing is on quotation only. Send an enquiry with the product, quantity and destination and we will come back to you with a quote.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q2">What are your MOQ, lead times and payment terms?</summary>
+          <div data-i18n="faq.a2">These depend on the product and destination. We share minimum order quantity, lead time and terms on request, by phone. Include your phone or WhatsApp number in your enquiry and we will call you.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q3">Which countries do you import from and export to?</summary>
+          <div data-i18n="faq.a3">We import from China, Turkey, Afghanistan, Dubai (UAE), Oman and Italy, and export to the Middle East, Malaysia and Sri Lanka. If you need another origin or destination, ask us.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q4">Do you supply branded products?</summary>
+          <div data-i18n="faq.a4">R.K. Trading is a general trader. We are not an authorised distributor or agent of any brand, so we describe products by type and specification, not by brand name. Tell us what you need and we will confirm what we can supply.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q5">Who does the packing, grading and sizing?</summary>
+          <div data-i18n="faq.a5">We do. Grading, sizing and packing are handled by us before every shipment.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q6">Can you confirm origin and shelf life?</summary>
+          <div data-i18n="faq.a6">Yes. We hold origin and shelf-life details for each product and confirm them in your quotation.</div>
+        </details>
+        <details class="faq-item">
+          <summary data-i18n="faq.q7">What happens after I send an enquiry?</summary>
+          <div data-i18n="faq.a7">Your enquiry reaches our team directly. We review your requirement and get back to you using the contact details you gave us.</div>
+        </details>
         </div>
       </div>
     </section>
 
-    <!-- =============================== CONTACT =============================== -->
-    <section id="contact" class="contact-section" aria-labelledby="contact-title">
-      <div class="container contact-grid">
-        <div class="contact-copy">
-          <p class="eyebrow eyebrow--light">Business enquiries</p>
-          <h2 id="contact-title" class="display-light">Let's discuss<br>your next <em>trade.</em></h2>
-          <p class="contact-intro">Looking to source a product, find a distribution partner or explore a new market? Tell us what you have in mind.</p>
-
-          <!--
-            PLACEHOLDERS: replace with your verified business details, then delete the <em> notes.
-            Once real, you can wrap the email in <a href="mailto:..."> and the phone in <a href="tel:+91...">.
-          -->
-          <ul class="contact-details">
-            <li class="contact-detail">
-              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s-6.5-6.1-6.5-11.2A6.5 6.5 0 0 1 12 3.3a6.5 6.5 0 0 1 6.5 6.5C18.5 14.9 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="9.8" r="2.3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
-              <div><small>Location</small><strong>[ Street address, Area, Mumbai – PIN code ]</strong><em>Placeholder: replace with your registered office address.</em></div>
-            </li>
-            <li class="contact-detail">
-              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3.5" y="5.5" width="17" height="13" rx="1.5" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="m4 6.5 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></span>
-              <div><small>Email</small><strong>hello@rktrading.in</strong><em>Placeholder: replace with your verified business email.</em></div>
-            </li>
-            <li class="contact-detail">
-              <span class="contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7.2 3.8 9.6 4.4l1.2 4-2 1.6a11 11 0 0 0 5.2 5.2l1.6-2 4 1.2.6 2.4c.2.9-.4 1.8-1.3 2A15.6 15.6 0 0 1 5.2 5.1c.2-.9 1.1-1.5 2-1.3Z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg></span>
-              <div><small>Phone / WhatsApp</small><strong>+91 XXXXX XXXXX</strong><em>Placeholder: replace with your business phone / WhatsApp number.</em></div>
-            </li>
+    <!-- ============================== GET A QUOTE ============================== -->
+    <section id="quote" class="section quote-section" aria-labelledby="quote-title">
+      <div class="container split">
+        <div class="prose">
+          <p class="eyebrow" data-i18n="cta.quote">Request a quote</p>
+          <h2 id="quote-title" class="section-title" data-i18n="cta.h">Tell us what you need to import or export.</h2>
+          <p class="lead" data-i18n="cta.p">Send an enquiry and we will come back to you with a quotation.</p>
+          <ul class="check-list">
+            <li data-i18n="home.hero.p1">Pricing on quotation</li>
+            <li data-i18n="home.hero.p2">Graded, sized and packed by us</li>
+            <li data-i18n="home.hero.p3">Origin and shelf life confirmed per product</li>
+          </ul>
+          <ul class="contact-inline">
+            <li><a data-contact="phone" data-hide-empty href="tel:+917006401698"><svg class="glyph" aria-hidden="true"><use href="#g-phone"></use></svg><span data-contact-text>+91 70064 01698</span></a></li>
+            <li><a data-contact="whatsapp" data-hide-empty href="https://wa.me/917006401698" target="_blank" rel="noopener"><svg class="glyph" aria-hidden="true"><use href="#g-chat"></use></svg><span data-i18n="float.wa">WhatsApp us</span></a></li>
+            <li><a data-contact="email" data-hide-empty href="mailto:riyazwani2015@gmail.com"><svg class="glyph" aria-hidden="true"><use href="#g-mail"></use></svg><span data-contact-text>riyazwani2015@gmail.com</span></a></li>
           </ul>
         </div>
-
-        <div class="form-panel">
-          <!--
-            Enquiry form. Field "name" attributes must match FIELDS in the Google Apps Script
-            (see google-sheets-setup.md). Submission logic lives in assets/js/main.js;
-            the Google Sheets URL is set in assets/js/config.js.
-          -->
-          <form class="enquiry-form" method="post" novalidate data-enquiry-form>
-            <p class="form-label">Enquiry form / 01</p>
-            <h3>Tell us what you are looking for.</h3>
-
+        <div class="quote-card" id="quick-quote" data-enquiry-wrap>
+          <form data-enquiry-form method="post" novalidate>
+            <h2 data-i18n="quick.title">Get a quote</h2>
+            <p class="quote-sub" data-i18n="quick.sub">Tell us what you need. Pricing is on quotation; MOQ, lead time and terms are shared on request.</p>
+            <input type="hidden" name="type" value="Request a quote">
             <div class="form-row">
-              <div class="field">
-                <label for="f-name">Name</label>
-                <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="Full name">
-              </div>
-              <div class="field">
-                <label for="f-email">Business email</label>
-                <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="you@company.com">
-              </div>
+              <div class="field"><label for="q-name" data-i18n="form.name">Name</label><input id="q-name" name="name" type="text" required autocomplete="name"></div>
+              <div class="field"><label for="q-email" data-i18n="form.email">Business email</label><input id="q-email" name="email" type="email" required autocomplete="email"></div>
             </div>
-
             <div class="form-row">
-              <div class="field">
-                <label for="f-company">Company <span>(optional)</span></label>
-                <input id="f-company" name="company" type="text" autocomplete="organization" placeholder="Company name">
-              </div>
-              <div class="field">
-                <label for="f-country">Country</label>
-                <input id="f-country" name="country" type="text" required autocomplete="country-name" placeholder="Destination country">
-              </div>
+              <div class="field"><label for="q-country" data-i18n="form.country">Country</label><input id="q-country" name="country" type="text" required autocomplete="country-name"></div>
+              <div class="field"><label for="q-phone" data-i18n="form.phoneShort">Phone / WhatsApp</label><input id="q-phone" name="phone" type="tel" autocomplete="tel"></div>
             </div>
-
-            <div class="form-row">
-              <div class="field">
-                <label for="f-phone">Phone / WhatsApp <span>(optional)</span></label>
-                <input id="f-phone" name="phone" type="tel" autocomplete="tel" placeholder="+country code number">
-              </div>
-              <div class="field">
-                <label for="f-quantity">Quantity / volume <span>(optional)</span></label>
-                <input id="f-quantity" name="quantity" type="text" placeholder="e.g. 1 x 20ft container">
-              </div>
-            </div>
-
-            <!-- Dropdowns get full-width rows so long options such as "Distributor / retail partnership" aren't cut off. -->
             <div class="field">
-              <label for="f-type">Enquiry type</label>
-              <select id="f-type" name="type">
-                <option>Product enquiry</option>
-                <option>Bulk / wholesale order</option>
-                <option>Shipment &amp; logistics</option>
-                <option>Labelling &amp; packaging</option>
-                <option>Distributor / retail partnership</option>
-                <option>Sample request</option>
-                <option>Other</option>
+              <label for="q-interest" data-i18n="form.interest">Product interest</label>
+              <select id="q-interest" name="interest">
+                <option value="Boilers, Heat Pumps &amp; Heating Equipment" data-slug="heating" data-i18n="cat.heating.name">Boilers, Heat Pumps &amp; Heating Equipment</option>
+                <option value="PPR Pipes &amp; Fittings" data-slug="ppr" data-i18n="cat.ppr.name">PPR Pipes &amp; Fittings</option>
+                <option value="Building &amp; Flooring Materials" data-slug="building" data-i18n="cat.building.name">Building &amp; Flooring Materials</option>
+                <option value="Herbals &amp; Ayurvedic Products" data-slug="herbal" data-i18n="cat.herbal.name">Herbals &amp; Ayurvedic Products</option>
+                <option value="Dates: Dry &amp; Fresh" data-slug="dates" data-i18n="cat.dates.name">Dates: Dry &amp; Fresh</option>
+                <option value="FMCG Products" data-slug="fmcg" data-i18n="cat.fmcg.name">FMCG Products</option>
+                <option value="Spices" data-slug="spices" data-i18n="cat.spices.name">Spices</option>
+                <option value="Tea" data-slug="tea" data-i18n="cat.tea.name">Tea</option>
+                <option value="Fresh Fruit &amp; Vegetables" data-slug="produce" data-i18n="cat.produce.name">Fresh Fruit &amp; Vegetables</option>
+                <option value="Grains" data-slug="grains" data-i18n="cat.grains.name">Grains</option>
+                <option value="Other / not sure" data-slug="other" data-i18n="form.interest.other">Other / not sure</option>
               </select>
             </div>
-
-            <div class="field">
-              <label for="f-interest">Product interest</label>
-              <select id="f-interest" name="interest">
-                <option>FMCG &amp; beverages</option>
-                <option>Botanical raw materials</option>
-                <option>Fresh produce</option>
-                <option>Import / export partnership</option>
-                <option>Other</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="f-message">Tell us about your requirement</label>
-              <textarea id="f-message" name="message" rows="4" placeholder="Product, origin, specifications, destination market…"></textarea>
-            </div>
-
-            <!-- Honeypot: hidden from people, filled in by simple bots. Submissions with it filled are dropped. -->
-            <div class="hp" aria-hidden="true">
-              <label for="f-website">Leave this field empty</label>
-              <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off">
-            </div>
-
-            <button class="button button--dark submit" type="submit" data-submit>
-              <span data-submit-label>Submit enquiry</span> <span class="arrow" aria-hidden="true">↗</span>
-            </button>
+            <div class="hp" aria-hidden="true"><label for="q-website">Leave this field empty</label><input id="q-website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+            <button class="button button--block submit" type="submit" data-submit><span data-submit-label data-i18n="form.send">Send enquiry</span> <span class="arrow" aria-hidden="true">↗</span></button>
             <p class="form-error" role="alert" hidden data-form-error></p>
-            <p class="form-note" data-form-note>We use your details only to respond to your enquiry.</p>
+            <p class="form-note" data-form-note data-i18n="form.privacy">We use your details only to respond to your enquiry.</p>
+            <p class="form-note is-demo" hidden data-demo-note data-i18n="form.demo.note">Demo mode: enquiries are not sent anywhere yet. Connect Google Sheets to start receiving them.</p>
+            <p class="form-more"><a class="link-arrow" href="contact.html#enquiry"><span data-i18n="quick.more">Prefer the detailed form?</span> <span class="arrow" aria-hidden="true">→</span></a></p>
           </form>
-
           <div class="success" hidden data-enquiry-success>
             <span class="success-icon" aria-hidden="true">✓</span>
-            <small data-success-label>Enquiry received</small>
-            <h3 tabindex="-1" data-success-title>Thank you for reaching out.</h3>
-            <p data-success-text>Our team will review your requirement and get back to you.</p>
-            <button class="link-underline" type="button" data-enquiry-again>Send another enquiry <span class="arrow" aria-hidden="true">↗</span></button>
+            <small data-success-label data-i18n="form.success.label">Enquiry received</small>
+            <h3 tabindex="-1" data-success-title data-i18n="form.success.title">Thank you for reaching out.</h3>
+            <p data-success-text data-i18n="form.success.text">Our team will review your requirement and get back to you.</p>
+            <p class="fineprint" style="margin-top:10px" hidden data-demo-success data-i18n="form.demo.success">Demo mode: nothing was sent. Connect Google Sheets to receive enquiries.</p>
+            <button class="link-underline" type="button" data-enquiry-again><span data-i18n="form.again">Send another enquiry</span></button>
           </div>
-
-          <noscript><p class="form-error">Please enable JavaScript to send an enquiry, or contact us directly using the details on this page.</p></noscript>
         </div>
       </div>
     </section>
   </main>
 
-  <!-- ================================ FOOTER ================================= -->
   <footer class="site-footer">
-    <div class="container footer-top">
-      <a class="brand brand--light" href="#top" aria-label="RK Trading, back to top">
-        <span class="brand-symbol" aria-hidden="true">RK</span>
-        <span class="brand-text"><strong>RK TRADING</strong><small>IMPORT · EXPORT · DISTRIBUTION</small></span>
-      </a>
-      <p class="footer-tagline">Connecting products. Connecting markets.</p>
-      <nav class="footer-nav" aria-label="Footer">
-        <a href="#company">Company</a>
-        <a href="#portfolio">Portfolio</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-      </nav>
+    <div class="container footer-main">
+      <div class="footer-about">
+        <a class="brand brand--light" href="index.html" aria-label="R.K. Trading, home">
+          <img class="brand-symbol" src="assets/img/logo-light-lg.png" alt="" width="112" height="112" loading="lazy" decoding="async">
+          <span class="brand-text"><strong>R.K. TRADING</strong><small>IMPORT · EXPORT · TRADING</small></span>
+        </a>
+        <p data-i18n="footer.about">Mumbai-based general trader importing and exporting since 2017.</p>
+      </div>
+      <div>
+        <h2 data-i18n="footer.imports">Imports</h2>
+        <ul>
+          <li><a href="imports.html#heating" data-i18n="cat.heating.name">Boilers, Heat Pumps &amp; Heating Equipment</a></li>
+          <li><a href="imports.html#ppr" data-i18n="cat.ppr.name">PPR Pipes &amp; Fittings</a></li>
+          <li><a href="imports.html#building" data-i18n="cat.building.name">Building &amp; Flooring Materials</a></li>
+          <li><a href="imports.html#herbal" data-i18n="cat.herbal.name">Herbals &amp; Ayurvedic Products</a></li>
+          <li><a href="imports.html#dates" data-i18n="cat.dates.name">Dates: Dry &amp; Fresh</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.exports">Exports</h2>
+        <ul>
+          <li><a href="exports.html#fmcg" data-i18n="cat.fmcg.name">FMCG Products</a></li>
+          <li><a href="exports.html#spices" data-i18n="cat.spices.name">Spices</a></li>
+          <li><a href="exports.html#tea" data-i18n="cat.tea.name">Tea</a></li>
+          <li><a href="exports.html#produce" data-i18n="cat.produce.name">Fresh Fruit &amp; Vegetables</a></li>
+          <li><a href="exports.html#grains" data-i18n="cat.grains.name">Grains</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2 data-i18n="footer.company">Company</h2>
+        <ul class="footer-contact">
+          <li><a href="about.html" data-i18n="footer.aboutLink">About us</a></li>
+          <li><a href="index.html#faq" data-i18n="footer.faq">FAQ</a></li>
+          <li><a href="contact.html#enquiry" data-i18n="footer.quote">Request a quote</a></li>
+          <li><a data-contact="phone" data-hide-empty href="tel:+917006401698"><span data-contact-text>+91 70064 01698</span></a></li>
+          <li><a data-contact="email" data-hide-empty href="mailto:riyazwani2015@gmail.com"><span data-contact-text>riyazwani2015@gmail.com</span></a></li>
+          <li><a data-contact="whatsapp" data-hide-empty href="https://wa.me/917006401698" target="_blank" rel="noopener"><span data-i18n="float.wa">WhatsApp us</span></a></li>
+          <li><a data-contact="address" data-hide-empty href="https://www.google.com/maps/search/?api=1&amp;query=Flat%2015%2C%203rd%20Floor%2C%20Haji%20Abdul%20Majid%20Apartments%2C%20Swami%20Vivekanand%20Marg%20%28behind%20Jasmine%20Apts%29%2C%20Andheri%20West%2C%20Mumbai%20%E2%80%93%20400058%2C%20Maharashtra" target="_blank" rel="noopener"><span data-contact-text>Flat 15, 3rd Floor, Haji Abdul Majid Apartments, Swami Vivekanand Marg (behind Jasmine Apts), Andheri West, Mumbai – 400058, Maharashtra</span></a></li>
+          <li data-hide-if-contact="address" data-i18n="util.loc" hidden>Mumbai, India</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p data-i18n="footer.legal1">R.K. Trading is a general trader. We are not an authorised distributor, agent or representative of any brand, and we describe products by type and specification rather than by brand name.</p>
+      <p data-i18n="footer.legal2">Images are illustrative. Availability, specifications, origin, shelf life and prices are confirmed on quotation.</p>
     </div>
     <div class="container footer-bottom">
-      <span>© <span data-year>2026</span> RK Trading. All rights reserved.</span>
-      <span>Mumbai, India · International sourcing &amp; trade</span>
+      <span>© <span data-year>2026</span> R.K. Trading. <span data-i18n="footer.rights">All rights reserved.</span></span>
+      <span data-i18n="footer.tag">Mumbai, India · Import &amp; Export Trading</span>
     </div>
   </footer>
+
+  <div class="float-actions" data-float>
+    <a class="float-call" data-contact="phone" data-hide-empty href="tel:+917006401698"><svg class="glyph" aria-hidden="true"><use href="#g-phone"></use></svg><span data-i18n="float.call">Call us</span></a>
+    <a class="float-wa" data-contact="whatsapp" data-hide-empty href="https://wa.me/917006401698" target="_blank" rel="noopener"><svg class="glyph" aria-hidden="true"><use href="#g-chat"></use></svg><span data-i18n="float.wa">WhatsApp us</span></a>
+    <a class="button float-quote" href="contact.html#enquiry"><span data-i18n="cta.quote">Request a quote</span> <span class="arrow" aria-hidden="true">↗</span></a>
+  </div>
 </body>
 </html>
