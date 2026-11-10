@@ -31,7 +31,7 @@ Large corporate traders (for example Tata International and Olam) were reviewed 
 | Exporter guidance: contact details in the header, a short enquiry form, say what happens after it is sent | Phone / email in the top bar (once supplied), quick-quote form in the hero, **What happens next** beside the contact form |
 | Show credentials on the home page | Trust bar (since 2017, 6 origin countries, 10 product lines, 6 registrations) and a registrations section; numbers on About |
 | Show markets served and the process | Where-we-trade map and lists; From packing to delivery (photos only, as the client asked) |
-| Real photos signal authenticity; stock photos do the opposite | Free Unsplash stand-in photos (no visible brand logos) on the ten products, to be replaced by the client's own; designed placeholders for the five process steps |
+| Real photos signal authenticity; stock photos do the opposite | Free Unsplash stand-in photos (no visible brand logos) on the twelve products, to be replaced by the client's own; designed placeholders for the five process steps |
 | Product pages organised around how buyers search, one page per product line | Imports and exports pages with category blocks, anchors and keyword-led titles |
 | Fast, light pages; no auto-playing video or pop-ups | No video, no pop-ups, photos lazy-loaded at card size, no web fonts for Chinese / Arabic |
 | Multilingual sites need proper language handling; machine-only Arabic hurts credibility | Language switcher with full right-to-left Arabic. Translations are drafts to be reviewed by a native speaker. Per-language URLs and `hreflang` are planned for the SEO phase |
@@ -49,8 +49,8 @@ marketplace listings such as [Katke's Spices and Beverages](https://www.globalli
 | Client answer | What we did |
 | --- | --- |
 | General trader, no brand authorisation. Brand and product names must not be displayed | Every brand name from the earlier draft was removed. Products are described by type and specification. A "general trader, not an authorised distributor" statement appears in the footer, About and FAQ |
-| Imports: heating equipment, PPR, heat pumps, boilers, building materials (WPC, WPA), herbals and ayurvedic, dry and fresh dates | Five import categories: boilers / heat pumps / heating equipment; PPR pipes and fittings; building and flooring materials; herbals and ayurvedic; dates |
-| Exports: FMCG, spices, tea, fresh fruit and vegetables, grains | Five export categories |
+| Imports: heating equipment, PPR, heat pumps, boilers, building materials (WPC, WPA), herbals and ayurvedic, dry and fresh dates | Six import categories: boilers / heat pumps / heating equipment; PPR pipes and fittings; building and flooring materials; herbals and ayurvedic; dates. Added later: dry fruits and nuts (from the catalogue) |
+| Exports: FMCG, spices, tea, fresh fruit and vegetables, grains | Six export categories (Indian snacks, covering grocery, flours, papad, chutneys and instant mixes, added from the catalogue) |
 | Origins: China, Turkey, Afghanistan, Dubai, Oman, Italy, Iran. Markets: Middle East, Malaysia, Sri Lanka, Iran | Shown, **except Iran** (see open items) |
 | Client does all packing, grading and sizing | Stated on every page |
 | Pricing on quotation; MOQ, lead times and terms by phone | Stated everywhere; the form asks for a phone / WhatsApp number; FAQ explains it |

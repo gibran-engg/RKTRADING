@@ -96,7 +96,7 @@ Sheet column by field: NAME = `name`, BUSINESS EMAIL = `email`, COMPANY = `compa
 | `country`  | Country                             | required                                           |
 | `phone`    | Phone / WhatsApp                    | optional                                           |
 | `type`     | Enquiry type                        | `Request a quote` for the home quick-quote form    |
-| `interest` | Product interest                    | one of the ten product lines, or `Other / not sure`; pre-filled by "Request a quote" links |
+| `interest` | Product interest                    | one of the twelve product lines, or `Other / not sure`; pre-filled by "Request a quote" links |
 | `quantity` | Quantity / volume                   | optional (full form only)                          |
 | `message`  | Tell us about your requirement      | pre-filled with the product name when empty        |
 | `language` | (automatic)                         | `en`, `zh` or `ar`: the language the visitor was reading. Use it to reply in their language |

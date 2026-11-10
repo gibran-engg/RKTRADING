@@ -86,7 +86,7 @@ Every page has a sun/moon button in the header. The site is light by default, wh
 
 ### Photos
 
-The ten product photos are free stock photos from [Unsplash](https://unsplash.com/license) loaded straight from their servers (no attribution required). They are **stand-ins** for the client's own photos, and each was checked for visible brand logos. To swap one, change the `src` of its `<img class="media">` in `index.html`, `imports.html` or `exports.html` to a file in `assets/img/`, for example:
+The twelve product photos are free stock photos from [Unsplash](https://unsplash.com/license) loaded straight from their servers (no attribution required). They are **stand-ins** for the client's own photos, and each was checked for visible brand logos. To swap one, change the `src` of its `<img class="media">` in `index.html`, `imports.html` or `exports.html` to a file in `assets/img/`, for example:
 
 ```html
 <img class="media" src="assets/img/dates.jpg" alt="Dry dates packed in cartons" width="900" height="720" loading="lazy">
