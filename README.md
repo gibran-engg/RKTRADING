@@ -41,6 +41,8 @@ assets/
   img/logo.png, logo-light.png   Company seal (header; white version for the dark footer)
   img/favicon-32.png, favicon-64.png, apple-touch-icon.png   Browser and phone icons (globe mark / full seal)
   img/world-map.svg   Land for the home-page trade map
+  img/brochure-food.jpg, brochure-building.jpg   Cover thumbnails for the catalogue download cards
+  brochures/          The two catalogue PDFs offered for download (see "Catalogue PDFs" below)
 docs/content-plan.md   Positioning, sitemap, research notes, decisions and open client questions
 google-sheets-setup.md How to receive enquiries in a Google Sheet
 ```
@@ -111,6 +113,14 @@ Each category exists in these places. Keep them in step:
 ### Navigation and footer
 
 The header and footer are repeated in each page so they work without JavaScript. To change a menu item, edit it in all five pages (search for `data-header`).
+
+### Catalogue PDFs
+
+Two catalogues are offered for download: **Food & Natural Products** and **Building & Heating Supplies**. The PDFs are in `assets/brochures/`; the cover thumbnails are `assets/img/brochure-food.jpg` and `brochure-building.jpg`. Each is linked from a "Download our product catalogues" section (id `catalogues`) on the home, imports, exports and about pages, and from the footer on every page except 404. Texts are under the `brochure.*` keys in `zh.js` and `ar.js`; the PDFs themselves are English only.
+
+To update one: rebuild it in the `brochure/` folder (see `brochure/README.md`), copy the new PDF over the one in `assets/brochures/` under the same name, and update the file size shown on its download button (search for `brochure-meta`) and the thumbnail if the cover changed. If the page count changes, update "15 pages" or "6 pages" in the card text (`brochure.food.p`, `brochure.bld.p`) in the HTML and both language files.
+
+**Before deploying:** Cloudflare Pages publishes the whole repository root, so the `brochure/` folder (build sources and the old brochure in `brochure/original/`) would be public. The old brochure names brands and lists Iranian saffron. Remove or ignore `brochure/` for the deployment, or move it out of this repository.
 
 ## The enquiry forms
 

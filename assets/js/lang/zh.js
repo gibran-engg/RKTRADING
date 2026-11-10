@@ -63,6 +63,16 @@ window.RK_LANG.zh = {
   'footer.legal2': '图片仅供示意。供货情况、规格、产地、保质期和价格以报价为准。',
   'footer.rights': '版权所有。',
   'footer.tag': '印度孟买 · 进出口贸易',
+  'brochure.eyebrow': '产品目录',
+  'brochure.title': '下载我们的<em>产品目录</em>',
+  'brochure.lead': '完整的产品清单，以及询价时需要提供的信息。PDF 格式，英文版。',
+  'brochure.food.t': '食品及天然产品',
+  'brochure.food.p': '椰枣、干果、巧克力、草本及阿育吠陀产品、香料、茶叶、谷物、新鲜果蔬和快消品。共 15 页。',
+  'brochure.bld.t': '建材及供暖产品',
+  'brochure.bld.p': '锅炉、热泵及供暖设备，PPR 管材管件，以及 WPC、WPA 地板等建筑材料。共 6 页。',
+  'brochure.btn': '下载 PDF',
+  'brochure.foodLink': '食品及天然产品目录（PDF）',
+  'brochure.bldLink': '建材及供暖产品目录（PDF）',
 
   /* Product categories (used on home, imports, exports, footer, forms) */
   'cat.heating.name': '锅炉、热泵及供暖设备',
