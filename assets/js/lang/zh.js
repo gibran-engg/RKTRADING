@@ -31,6 +31,7 @@ window.RK_LANG.zh = {
   'nav.menuClose': '关闭菜单',
   'nav.main': '主导航',
   'lang.label': '语言',
+  'theme.dark': '深色模式',
   'common.home': '首页',
   'common.breadcrumb': '面包屑导航',
   'common.photoSoon': '照片待添加',

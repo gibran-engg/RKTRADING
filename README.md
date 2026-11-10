@@ -78,6 +78,10 @@ To change a sentence: edit the English in the HTML, then update the same key in 
 
 The translations are a **first draft**. Have a native speaker review them (especially trade terms) before launch.
 
+### Dark / light theme
+
+Every page has a sun/moon button in the header. The site is light by default, whatever the visitor's system setting; once they press the button, their choice is remembered in the browser (`localStorage` key `rk-theme`). The colours live in `assets/css/main.css`: the light values are the tokens at the top (section 1) and the dark values are one block at the very end (section 20). To change a dark colour, edit it there. The tiny script at the top of each page's `<head>` applies the theme before the page paints (this avoids a white flash), so keep it in sync across pages, like the language script next to it.
+
 ### Photos
 
 The ten product photos are free stock photos from [Unsplash](https://unsplash.com/license) loaded straight from their servers (no attribution required). They are **stand-ins** for the client's own photos, and each was checked for visible brand logos. To swap one, change the `src` of its `<img class="media">` in `index.html`, `imports.html` or `exports.html` to a file in `assets/img/`, for example:

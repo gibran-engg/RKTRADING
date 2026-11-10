@@ -31,6 +31,7 @@ window.RK_LANG.ar = {
   'nav.menuClose': 'إغلاق القائمة',
   'nav.main': 'القائمة الرئيسية',
   'lang.label': 'اللغة',
+  'theme.dark': 'الوضع الداكن',
   'common.home': 'الرئيسية',
   'common.breadcrumb': 'مسار التنقل',
   'common.photoSoon': 'ستُضاف الصورة قريباً',
