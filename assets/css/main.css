@@ -76,7 +76,7 @@
   --font-display: 'Manrope', var(--font-body);
 
   /* Layout */
-  --container: 1180px;
+  --container: 1440px;
   --gutter: 28px;
   --header-h: 92px;
   --section-y: clamp(64px, 8vw, 100px);
@@ -768,6 +768,12 @@ body { animation: pagein .5s ease-out; }
 .cat .photo .media { border-radius: 0; }
 .photo .media { transition: transform .9s var(--ease); }
 .card-cat:hover .photo .media, .cat:hover .photo .media { transform: scale(1.06); }
+/* Category with several photos (Imports > heating): one wide photo over two squares, no hover zoom */
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.cat .photo-grid .media { aspect-ratio: 1 / 1; max-height: none; height: 100%; border-radius: 0; }
+.cat .photo-grid .media--wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+.cat:nth-child(even) .photo-grid { order: 2; }
+.cat:hover .photo-grid .media { transform: none; }
 .dir-badge { transition: transform .35s var(--ease), box-shadow .35s var(--ease); }
 .dir-badge .glyph { transition: transform .35s var(--ease); }
 .card-cat:hover .dir-badge, .cat:hover .dir-badge { transform: scale(1.08); box-shadow: 0 8px 20px rgba(3, 20, 14, .3); }
