@@ -15,7 +15,7 @@
     8. Photo slots (.media)    16. Footer & floating actions
                                17. Languages (zh / ar)
                                18. Responsive
-   19. Motion                  20. Dark theme
+   19. Motion
    ========================================================================== */
 
 /* 1. Design tokens ------------------------------------------------------- */
@@ -297,12 +297,6 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .lang-switch button[aria-pressed='true'] { background: var(--green-800); color: var(--on-dark); }
 
 .nav-tools { display: flex; align-items: center; gap: 10px; }
-.theme-toggle { flex: none; display: inline-grid; place-items: center; width: 40px; height: 40px; padding: 0; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--surface); color: var(--muted); transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease); }
-.theme-toggle:hover { color: var(--heading); background: var(--green-50); }
-.theme-toggle .glyph { width: 20px; height: 20px; }
-.theme-toggle .icon-sun { display: none; }
-[data-theme='dark'] .theme-toggle .icon-sun { display: block; }
-[data-theme='dark'] .theme-toggle .icon-moon { display: none; }
 
 .menu-toggle { display: none; }
 
@@ -330,6 +324,33 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .hero-art .arc-out { stroke: #7fe0b6; stroke-dasharray: 3 7; animation: flow 18s linear infinite reverse; }
 .hero-art circle { fill: var(--white); }
 @keyframes flow { to { stroke-dashoffset: -200; } }
+
+/* Hero photograph ---------------------------------------------------------
+   Each page carries its own picture so the tabs are told apart at a glance.
+   The photo sits furthest back; a dark brand-coloured wash over it keeps the
+   headline and buttons above AA contrast on every image. */
+.hero--photo { background: var(--green-950); }
+.hero-photo { position: absolute; inset: 0; z-index: -2; overflow: hidden; }
+.hero-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center; }
+.hero--photo::before {
+  content: ''; position: absolute; inset: 0; z-index: -1;
+  background:
+    linear-gradient(100deg, rgba(6, 36, 27, .96) 0%, rgba(8, 48, 35, .90) 44%, rgba(9, 44, 74, .74) 100%),
+    linear-gradient(to top, rgba(6, 36, 27, .45), transparent 55%);
+}
+[dir='rtl'] .hero--photo::before {
+  background:
+    linear-gradient(260deg, rgba(6, 36, 27, .96) 0%, rgba(8, 48, 35, .90) 44%, rgba(9, 44, 74, .74) 100%),
+    linear-gradient(to top, rgba(6, 36, 27, .45), transparent 55%);
+}
+/* Per-page framing: hold the part of each photo that reads best behind text. */
+.hero--home .hero-photo img    { object-position: center 42%; }
+.hero--imports .hero-photo img { object-position: 70% center; }
+.hero--exports .hero-photo img { object-position: center 55%; }
+.hero--about .hero-photo img   { object-position: 60% center; }
+.hero--contact .hero-photo img { object-position: center 40%; }
+/* Inner pages carry no arc graphic, so give their heroes a little more height. */
+.page-hero.hero--photo .container { padding-block: clamp(56px, 7vw, 92px); }
 
 .hero-grid { padding-block: clamp(56px, 8vw, 104px); }
 .hero-grid > div { max-width: 780px; }
@@ -410,19 +431,15 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
 .card-grid + .subhead { margin-top: 56px; }
 
 /* Imports / exports pages: one block per category */
-.jump-nav { position: sticky; top: var(--header-h); z-index: 40; background: var(--surface); border-bottom: 1px solid var(--line); }
-.jump-nav .container { display: flex; gap: 8px; padding-block: 12px; overflow-x: auto; scrollbar-width: thin; }
-.jump-nav a { flex: none; padding: 7px 14px; border: 1px solid var(--line-strong); border-radius: 99px; font-size: 14px; font-weight: 500; color: var(--text); white-space: nowrap; transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease); }
-.jump-nav a:hover { border-color: var(--blue-700); color: var(--link); }
 
-.cat-list > .cat + .cat { margin-top: clamp(48px, 6vw, 72px); padding-top: clamp(48px, 6vw, 72px); border-top: 1px solid var(--line); }
-.cat { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(28px, 5vw, 64px); align-items: center; }
+.cat-list > .cat + .cat { margin-top: clamp(64px, 8vw, 112px); padding-top: clamp(64px, 8vw, 112px); border-top: 1px solid var(--line); }
+.cat { display: grid; grid-template-columns: minmax(0, .62fr) minmax(0, 1.38fr); gap: clamp(32px, 5vw, 76px); align-items: center; }
 .cat:nth-child(even) .photo { order: 2; }
-.cat .media { aspect-ratio: 5 / 4; border-radius: 12px; }
+/* Photo moves to the right on alternate rows, so mirror the column widths too
+   and keep the picture the narrow one. */
+.cat:nth-child(even) { grid-template-columns: minmax(0, 1.38fr) minmax(0, .62fr); }
+.cat .media { aspect-ratio: 4 / 3; border-radius: 12px; }
 .cat-body > * + * { margin-top: 16px; }
-.cat-body .tag { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px 5px 9px; border-radius: 99px; background: var(--blue-100); font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--link-hover); }
-.cat-body .tag .glyph { width: 15px; height: 15px; stroke-width: 3.4; }
-.cat-body .tag--export { background: var(--green-100); color: var(--green-deep-fg); }
 .cat-body h2 { font: 700 clamp(26px, 3vw, 34px)/1.2 var(--font-display); letter-spacing: -.03em; color: var(--heading); }
 .cat-body > p { font-size: 16px; line-height: 1.75; color: var(--muted); }
 .cat-body h3 { font-size: 12.5px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--green-fg); }
@@ -564,7 +581,10 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
 .field-error { font-size: 13px; color: var(--error); }
 .field.is-highlighted select { animation: highlight 2.4s var(--ease); }
 @keyframes highlight { 0%, 40% { border-color: var(--blue-700); box-shadow: 0 0 0 4px rgba(34, 113, 209, .28); } }
-.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+/* Spam honeypot. Clipped rather than parked at left:-9999px: an off-screen
+   offset is mirrored in RTL and gives the Arabic pages 10,000px of sideways
+   scroll. Still present and fillable for bots, invisible to people. */
+.hp { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); clip-path: inset(50%); white-space: nowrap; }
 .submit { margin-top: 4px; }
 .submit:disabled { opacity: .7; cursor: progress; }
 .form-error { margin-top: 14px; font-size: 14px; line-height: 1.6; text-align: center; color: var(--error); }
@@ -598,6 +618,13 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
 .float-wa { display: inline-flex; align-items: center; gap: 10px; min-height: 52px; padding: 0 20px; border-radius: 99px; background: #1fa855; color: var(--white); font-size: 15px; font-weight: 600; box-shadow: 0 10px 28px rgba(8, 60, 30, .35); transition: transform .2s var(--ease), background-color .2s var(--ease); }
 .float-wa:hover { background: #178a45; transform: translateY(-2px); }
 .float-wa .glyph { width: 22px; height: 22px; }
+
+/* WhatsApp mark. The colour emoji carries the meaning; swap the <span> for the
+   official WhatsApp SVG (brand resources) if an exact logo is ever required. */
+.wa-mark { flex: none; display: inline-grid; place-items: center; width: 22px; height: 22px; font-size: 17px; line-height: 1; font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Noto Color Emoji', sans-serif; }
+.contact-icon .wa-mark { width: 24px; height: 24px; font-size: 19px; }
+.contact-details li .contact-icon:has(.wa-mark) { background: #e4f7ec; }
+.button--outline .wa-mark { font-size: 16px; }
 .float-quote, .float-call { display: none; }
 .contact-inline { display: flex; flex-wrap: wrap; gap: 10px 26px; margin-top: 26px; }
 .contact-inline a { display: inline-flex; align-items: center; gap: 9px; font-size: 15px; font-weight: 600; color: var(--green-deep-fg); transition: color .2s var(--ease); }
@@ -659,9 +686,10 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
   .site-nav .button { margin-top: 14px; }
 
   .hero-grid, .trade-grid, .reg-split, .split, .contact-grid { grid-template-columns: 1fr; }
-  .cat { grid-template-columns: 1fr; }
+  .cat, .cat:nth-child(even) { grid-template-columns: 1fr; }
   .cat:nth-child(even) .photo { order: 0; }
-  .cat .media { aspect-ratio: 16 / 9; max-height: 300px; width: 100%; }
+  .cat .media { aspect-ratio: 16 / 9; max-height: 220px; width: 100%; }
+  .cat .photo { margin-bottom: 8px; }
   .why-grid, .steps-row { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trust-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .trust-item:nth-child(3) { padding-inline-start: 0; border-inline-start: 0; }
@@ -698,10 +726,8 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
   .link-arrow { padding-block: 10px; }
   .contact-inline a { padding-block: 10px; }
   .breadcrumb a { display: inline-block; padding-block: 8px; }
-  .jump-nav a { padding-block: 11px; }
   .contact-value { display: inline-block; padding-block: 8px; }
   .lang-switch button { height: 40px; min-width: 44px; }
-  .theme-toggle { width: 48px; height: 48px; }
   .footer-main li + li { margin-top: 0; }
   .footer-main li > a { display: inline-block; padding-block: 11px; }
 
@@ -709,22 +735,36 @@ img.media { display: block; width: 100%; object-fit: cover; background: var(--gr
   .trade-map text { font-size: 26px; stroke-width: 5px; }
   .trade-map .label-home { font-size: 30px; }
 
-  /* Sticky quote button on phones */
-  body { padding-bottom: 76px; }
-  .float-actions { inset-inline: 0; bottom: 0; flex-direction: row; align-items: stretch; gap: 8px; padding: 10px 14px; background: var(--float-bg); border-top: 1px solid var(--line); box-shadow: 0 -8px 24px rgba(9, 53, 39, .1); }
-  .float-quote { display: inline-flex; flex: 1; }
-  .float-call { display: inline-flex; align-items: center; justify-content: center; gap: 8px; flex: 1; min-height: 50px; padding: 0 12px; border-radius: 6px; background: var(--green-700); color: var(--on-dark); font-size: 15px; font-weight: 600; }
-  .float-call .glyph { width: 20px; height: 20px; }
-  .float-wa { flex: 1; justify-content: center; min-height: 50px; padding: 0 12px; border-radius: 6px; box-shadow: none; }
+  /* Sticky action bar on phones. Kept slim: short buttons, tight type, and a
+     translucent bar so it reads as a strip rather than a block of colour.
+     env(safe-area-inset-bottom) clears the home indicator on notched phones. */
+  body { padding-bottom: calc(60px + env(safe-area-inset-bottom)); }
+  .float-actions {
+    inset-inline: 0; bottom: 0; flex-direction: row; align-items: stretch; gap: 7px;
+    padding: 7px 12px calc(7px + env(safe-area-inset-bottom));
+    background: var(--float-bg); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+    border-top: 1px solid var(--line); box-shadow: 0 -6px 18px rgba(9, 53, 39, .08);
+  }
+  .float-actions > * { flex: 1 1 0; min-width: 0; min-height: 42px; padding-inline: 7px; border-radius: 8px; font-size: 13.5px; font-weight: 600; line-height: 1.2; text-align: center; }
+  .float-quote { display: inline-flex; }
+  .float-call { display: inline-flex; align-items: center; justify-content: center; gap: 5px; background: var(--green-700); color: var(--on-dark); }
+  .float-call .glyph, .float-actions .wa-mark { width: 17px; height: 17px; font-size: 14px; }
+  .float-wa { justify-content: center; gap: 5px; box-shadow: none; }
+  /* The arrow costs width the labels need, and the bar is already a clear CTA. */
+  .float-quote .arrow { display: none; }
+  .float-quote .fq-short { display: none; }
   .no-float-bar .float-actions { display: none; }
   .no-float-bar { padding-bottom: 0; }
 }
 
 @media (max-width: 420px) {
   /* Call / WhatsApp / Quote share the bar equally so nothing runs off a 360px screen */
-  .float-actions { gap: 6px; padding-inline: 10px; }
-  .float-actions > * { flex: 1 1 0; min-width: 0; padding-inline: 6px; font-size: 14px; text-align: center; line-height: 1.2; }
-  .float-actions .glyph { display: none; }
+  .float-actions { gap: 5px; padding-inline: 9px; }
+  .float-actions > * { padding-inline: 6px; font-size: 12.5px; }
+  .float-actions .glyph, .float-actions .wa-mark { display: none; }
+  /* "Get a quote" keeps the third button on one line on 360px Androids. */
+  .float-quote .fq-long { display: none; }
+  .float-quote .fq-short { display: inline; }
 }
 
 @media (max-width: 400px) {
@@ -769,7 +809,7 @@ body { animation: pagein .5s ease-out; }
 .photo .media { transition: transform .9s var(--ease); }
 .card-cat:hover .photo .media, .cat:hover .photo .media { transform: scale(1.06); }
 /* Category with several photos (Imports > heating): one wide photo over two squares, no hover zoom */
-.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.photo-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
 .cat .photo-grid .media { aspect-ratio: 1 / 1; max-height: none; height: 100%; border-radius: 0; }
 .cat .photo-grid .media--wide { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
 .cat:nth-child(even) .photo-grid { order: 2; }
@@ -796,7 +836,6 @@ body { animation: pagein .5s ease-out; }
 .process-card:hover .photo .media { transform: scale(1.06); }
 .chips li, .badge { transition: transform .2s var(--ease), border-color .2s var(--ease), background-color .2s var(--ease); }
 .chips li:hover, .badge:hover { transform: translateY(-2px); border-color: var(--blue-600); }
-.jump-nav a:hover { transform: translateY(-1px); }
 
 /* Details, success and the Mumbai hub */
 .faq-item[open] > div { animation: faq-in .4s var(--ease); }
@@ -807,51 +846,6 @@ body { animation: pagein .5s ease-out; }
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
-
-/* 20. Dark theme --------------------------------------------------------
-   Switched by <html data-theme="dark">, set before first paint by the inline script in each
-   page's <head> (saved choice in localStorage "rk-theme", else the visitor's system setting).
-   Only tokens change here. The hero, call-to-action band, trade map and footer are already
-   dark, so they look the same in both themes. */
-[data-theme='dark'] {
-  color-scheme: dark;
-
-  --page: #0b1410;
-  --surface: #12201a;
-  --ink: #eaf3ee;
-  --text: #c9d8d0;
-  --muted: #9fb2a8;
-  --line: #22332b;
-  --line-strong: #314a3e;
-
-  --green-50: #0f1b16;
-  --green-100: #183428;
-  --blue-50: #0d1a2b;
-  --blue-100: #153251;
-
-  --heading: #eef6f1;
-  --link: #8dbdf5;
-  --link-hover: #c4dcf8;
-  --green-fg: #6fd1a6;
-  --green-fg-soft: #5cc79b;
-  --green-deep-fg: #8fe0bd;
-  --focus: #8dbdf5;
-  --error: #ff8f78;
-
-  --header-bg: rgba(11, 20, 16, .94);
-  --float-bg: rgba(11, 20, 16, .97);
-  --shadow-card: 0 18px 40px rgba(0, 0, 0, .45);
-  --shadow-header: 0 6px 24px rgba(0, 0, 0, .45);
-}
-/* Hard-coded colours that tokens cannot reach */
-[data-theme='dark'] .field input::placeholder, [data-theme='dark'] .field textarea::placeholder { color: #7d9187; }
-[data-theme='dark'] .field select { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5 6 6.5l5-5' fill='none' stroke='%238dbdf5' stroke-width='1.8'/%3E%3C/svg%3E"); }
-[data-theme='dark'] .check-list > li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='m4.5 8.3 2.3 2.3 4.7-5' fill='none' stroke='%236fd1a6' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
-[data-theme='dark'] .button--light:hover { background: #e2eefc; border-color: #e2eefc; }
-/* Logo is dark green on transparent: show the white version on dark backgrounds */
-[data-theme='dark'] .site-header .brand-symbol, [data-theme='dark'] img[src$='logo-lg.png'] { filter: brightness(0) invert(1); }
-/* Soften photos a little so they do not glare against dark pages */
-[data-theme='dark'] img.media { filter: brightness(.88) contrast(1.03); }
 
 /* 17. Catalogue downloads ------------------------------------------------ */
 .brochure-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }

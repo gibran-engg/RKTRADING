@@ -6,7 +6,6 @@
  * 3. Enquiry forms: validation, demo mode, Google Sheets submission, product pre-fill
  * 4. Footer year
  * 5. Scroll reveal
- * 6. Dark / light theme toggle
  *
  * Page content lives in the HTML files, so pages are readable without JavaScript.
  * Language switching is in i18n.js. User-facing strings here go through t() so they can be translated.
@@ -20,37 +19,11 @@
     return window.RK_I18N ? window.RK_I18N.t(key, fallback) : fallback;
   }
 
-  initTheme();
   initNavigation();
   initContactDetails();
   initForms();
   initFooterYear();
   initReveal();
-
-  /* 6. Dark / light theme ------------------------------------------------- */
-  // The inline script in each page's <head> sets <html data-theme> before first paint (saved
-  // choice, else light). This wires up the toggle buttons and remembers the choice.
-  function initTheme() {
-    var root = document.documentElement;
-    var meta = document.querySelector('meta[name="theme-color"]');
-    var buttons = document.querySelectorAll('[data-theme-toggle]');
-
-    function apply(theme) {
-      root.setAttribute('data-theme', theme);
-      if (meta) meta.setAttribute('content', theme === 'dark' ? '#0b1410' : '#0c4a37');
-      buttons.forEach(function (b) { b.setAttribute('aria-pressed', String(theme === 'dark')); });
-    }
-
-    apply(root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light');
-
-    buttons.forEach(function (button) {
-      button.addEventListener('click', function () {
-        var next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
-        apply(next);
-        try { localStorage.setItem('rk-theme', next); } catch (e) { /* storage blocked: choice lasts for this page only */ }
-      });
-    });
-  }
 
   /* 5. Scroll reveal ------------------------------------------------------ */
   // Content fades up as it enters the screen. Skipped for visitors who prefer reduced
